@@ -5,9 +5,6 @@ Election Commission's claim about Karnataka's final voter roll after the 2026
 Special Intensive Revision. It's published at
 [diagramchasing.fun/2026/karnataka-sir](https://diagramchasing.fun/2026/karnataka-sir).
 
-The site is built with SvelteKit and D3, and every page is prerendered to
-static HTML.
-
 ## Before you begin
 
 - Install Node.js 22 or later.
