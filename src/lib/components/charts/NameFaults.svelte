@@ -44,14 +44,17 @@
 	].sort((a, b) => b.n - a.n);
 	const total = rows.reduce((s, d) => s + d.n, 0);
 
+	/** extra height to spread across the rows, for a frame taller than the chart (the share images) */
+	let { stretch = 0 } = $props();
+
 	let width = $state(680);
 	const w = $derived(Math.max(width, 300));
 	const narrow = $derived(w < 540);
 	const LAB = $derived(narrow ? 0 : 176);
 	const END = 52;
 	const B = $derived(w - LAB - END);
-	const RH = $derived(narrow ? 52 : 30);
-	const BAR = 22;
+	const RH = $derived((narrow ? 52 : 30) + stretch / rows.length);
+	const BAR = $derived(Math.min(28, 22 + stretch / rows.length / 2));
 	const AX = 26;
 	const TOP = $derived(AX + (narrow ? 26 : 0));
 	const H = $derived(TOP + rows.length * RH);

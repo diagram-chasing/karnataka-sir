@@ -42,11 +42,11 @@ for (const c of CHARTS.filter((c) => want(c.id))) {
 const server = await createServer({ server: { port: 5199, strictPort: false }, logLevel: 'error' });
 await server.listen();
 const origin = new URL(server.resolvedUrls.local[0]).origin;
-const browser = await puppeteer.launch({
-	executablePath: CHROME,
-	headless: true,
-	args: ['--hide-scrollbars']
-});
+// one browser per worker: a tab behind another gets no resize observations, so the charts never
+// see the widths the fitter tries and it scores stale layouts
+const launch = () =>
+	puppeteer.launch({ executablePath: CHROME, headless: true, args: ['--hide-scrollbars'] });
+const browser = await launch();
 
 async function shoot(page, job) {
 	await page.setViewport({ width: job.w, height: job.h, deviceScaleFactor: job.scale });
@@ -134,14 +134,15 @@ try {
 
 	const queue = [...jobs];
 	const failed = [];
-	const fresh = async () => {
-		const page = await browser.newPage();
+	const fresh = async (own) => {
+		const page = await own.newPage();
 		await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'light' }]);
 		return page;
 	};
 	// a page that times out is thrown away and the image tried once more on a new one
 	const worker = async () => {
-		let page = await fresh();
+		const own = await launch();
+		let page = await fresh(own);
 		for (let job; (job = queue.shift()); ) {
 			for (let attempt = 1; ; attempt++) {
 				try {
@@ -149,7 +150,7 @@ try {
 					break;
 				} catch (err) {
 					await page.close().catch(() => {});
-					page = await fresh();
+					page = await fresh(own);
 					if (attempt === 2) {
 						failed.push(job.out);
 						console.error(`  failed: ${job.out} (${err.message})`);
@@ -158,7 +159,7 @@ try {
 				}
 			}
 		}
-		await page.close();
+		await own.close();
 	};
 	console.log(`Rendering ${jobs.length} images`);
 	await Promise.all(Array.from({ length: 3 }, worker));

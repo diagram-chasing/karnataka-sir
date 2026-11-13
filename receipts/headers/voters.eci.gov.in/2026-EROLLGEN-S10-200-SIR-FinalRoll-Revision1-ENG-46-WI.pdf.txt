@@ -1,0 +1,17 @@
+GET https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/200/2026-EROLLGEN-S10-200-SIR-FinalRoll-Revision1-ENG-46-WI.pdf
+HTTP 200 https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/200/2026-EROLLGEN-S10-200-SIR-FinalRoll-Revision1-ENG-46-WI.pdf
+accept-ranges: bytes
+age: 0
+connection: keep-alive
+content-length: 12581455
+content-type: application/pdf
+date: Fri, 13 Nov 2026 11:33:44 GMT
+last-modified: Mon, 26 Oct 2026 17:03:07 GMT
+server: v/7.0.4/6.6.8/v124del1-www
+set-cookie: sess_map=svrryqsqzwcqfqwxdfdcqxxatvsxtfrqvftqwbtxbuxefrqdrwtfszvecrcxfazarvvtyvezbezabrtqctxuzxtvveadvracsbzvvcqcbbuaqdrswedyfzuduxyruvuctsbaxuyucfvtfzwruwaqdzfvqvedqcxdytrvssaebxaayaxq; Path=/; HttpOnly; Secure;
+vary: User-Agent
+x-cache: MISS,v504del1
+x-mp-xae2: 6791
+x-rcor: 04cef67f13b2d4f22c46057743466bc2
+x-tata-request-id: 7fc120c5483a6a6d60a81b6272ebe0c4, 7fc120c5483a6a6d60a81b6272ebe0c4
+x-version: ecivo5JSjX2LFP00_v2

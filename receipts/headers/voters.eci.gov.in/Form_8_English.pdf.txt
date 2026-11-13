@@ -1,0 +1,31 @@
+GET https://voters.eci.gov.in/formspdf/Form_8_English.pdf
+HTTP 200 https://voters.eci.gov.in/formspdf/Form_8_English.pdf
+accept-ranges: bytes
+access-control-allow-origin: https://voters.eci.gov.in, https://gateway-voters.eci.gov.in
+age: 0
+allow: GET, POST, HEAD
+cache-control: no-store, no-cache
+chunked_transfer_encoding: on
+clear-site-data: cache, cookie, storage, executionContexts
+connection: keep-alive
+content-length: 87686
+content-security-policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self' https://voters.eci.gov.in; frame-src 'self'  https://eos-s1.eci.gov.in:15443 blob: data:; media-src 'self' https://gateway-voters.eci.gov.in; connect-src 'self' https://voters.eci.gov.in https://gateway-voters.eci.gov.in https://gateway-vpd.eci.gov.in https://affidavit.eci.gov.in https://eos-s2.eci.gov.in:15443 https://gateway-s2-blo.eci.gov.in https://gateway-s1-blo.eci.gov.in https://eos-s1.eci.gov.in:15443 https://cdn.jsdelivr.net https://cb.eci.gov.in:5005 wss://cb.eci.gov.in:5005; script-src 'self' https://cdn.jsdelivr.net https://cb.eci.gov.in:5005 https://eos-s2.eci.gov.in:15443 https://gateway-s1-blo.eci.gov.in blob: ; img-src 'self' https://gateway-voters.eci.gov.in https://eos-s1.eci.gov.in:15443 https://eos-s2.eci.gov.in:15443 https://cb.eci.gov.in:5005 https://affidavit.eci.gov.in https://gateway-s1-blo.eci.gov.in data: blob: ; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cb.eci.gov.in:5005 ; font-src 'self'  https://gisttransserver.in https://fonts.gstatic.com
+content-type: application/pdf
+date: Fri, 13 Nov 2026 11:33:22 GMT
+expect-ct: max-age=3600
+last-modified: Thu, 12 Nov 2026 07:20:18 GMT
+referrer-policy: same-origin
+server: v/7.0.4/6.6.8/v124del1-www
+set-cookie: sess_map=dyqsaadccfwwerwbdrsyxsfrtdbzeruazddvaetfwuzasvcxbxeduyebqwuduqtxwyqyacaczwdcsqddeccyeyxcxbasfxdedxrzwxueeqrtyesabvbecwzqfvyzfzwycrvxyawvecaqquudxbuuyycyybtyaayaxbsswsvdfqaxfrsq; Path=/; HttpOnly; Secure;
+set-cookie: Path=/; HttpOnly; Secure; SameSite=strict
+strict-transport-security: max-age=31536000; includeSubdomains; preload
+vary: User-Agent
+x-cache: MISS,v503del1
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-mp-xae2: 6194
+x-permitted-cross-domain-policies: none
+x-rcor: aafbf50931f7b9a9b280dd2787ce4dd2
+x-tata-request-id: e848ae3901af323510121eb9bcf467f0, e848ae3901af323510121eb9bcf467f0
+x-version: ecivo5JSjX2LFP00_v2
+x-xss-protection: 1; mode=block

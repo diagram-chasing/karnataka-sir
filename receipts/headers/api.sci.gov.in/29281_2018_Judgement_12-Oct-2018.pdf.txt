@@ -1,0 +1,9 @@
+GET https://api.sci.gov.in/supremecourt/2018/29281/29281_2018_Judgement_12-Oct-2018.pdf
+HTTP 200 https://api.sci.gov.in/supremecourt/2018/29281/29281_2018_Judgement_12-Oct-2018.pdf
+accept-ranges: bytes
+content-length: 129478
+content-type: application/pdf
+date: Fri, 13 Nov 2026 11:33:46 GMT
+etag: "1f9c6-578051ab5c21b"
+last-modified: Fri, 12 Oct 2018 09:56:41 GMT
+server: Apache/2.4.25 (Debian)

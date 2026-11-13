@@ -29,14 +29,15 @@ Special Intensive Revision. It's published at
 
 ## Commands
 
-| Command        | What it does                                                      |
-| -------------- | ----------------------------------------------------------------- |
-| `pnpm dev`     | Starts the dev server.                                            |
-| `pnpm build`   | Builds the static site into `build/`.                             |
-| `pnpm preview` | Serves the build. Open `/2026/karnataka-sir`.                     |
-| `pnpm check`   | Type-checks the project with `svelte-check`.                      |
-| `pnpm social`  | Redraws the share images. Requires Google Chrome on this machine. |
-| `pnpm rss`     | Refreshes the "More from us" posts in the footer.                 |
+| Command         | What it does                                                          |
+| --------------- | --------------------------------------------------------------------- |
+| `pnpm dev`      | Starts the dev server.                                                |
+| `pnpm build`    | Builds the static site into `build/`.                                 |
+| `pnpm preview`  | Serves the build. Open `/2026/karnataka-sir`.                         |
+| `pnpm check`    | Type-checks the project with `svelte-check`.                          |
+| `pnpm social`   | Redraws the share images. Requires Google Chrome on this machine.     |
+| `pnpm rss`      | Refreshes the "More from us" posts in the footer.                     |
+| `pnpm receipts` | Archives every linked document and records its hash. See `receipts/`. |
 
 ## Where things are
 
@@ -57,7 +58,6 @@ Special Intensive Revision. It's published at
   tokens.
 - `src/lib/social.js`: The share image formats and charts. `pnpm social` writes
   the link preview to `static/og/card.jpg` and the rest to `social/`.
-
 
 ## Data and sources
 

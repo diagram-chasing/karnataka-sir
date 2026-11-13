@@ -1,0 +1,292 @@
+{
+	"documents": [
+		{
+			"url": "https://api.sci.gov.in/supremecourt/2018/29281/29281_2018_Judgement_12-Oct-2018.pdf",
+			"cited_in": ["src/lib/content.md", "src/lib/sources.js"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:51.537Z",
+					"final_url": "https://api.sci.gov.in/supremecourt/2018/29281/29281_2018_Judgement_12-Oct-2018.pdf",
+					"status": 200,
+					"bytes": 129478,
+					"sha256": "f210ed14b3c106635bfacde53658eaf5c624e6fe6fe3e239dcb8cfbf614cc1c2",
+					"content_type": "application/pdf",
+					"last_modified": "Fri, 12 Oct 2018 09:56:41 GMT",
+					"etag": "\"1f9c6-578051ab5c21b\"",
+					"file": "files/api.sci.gov.in/29281_2018_Judgement_12-Oct-2018.pdf",
+					"headers": "headers/api.sci.gov.in/29281_2018_Judgement_12-Oct-2018.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://ceo.karnataka.gov.in/csv_upload/english/A031.csv",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:34:20.807Z",
+					"final_url": "https://ceo.karnataka.gov.in/csv_upload/english/A031.csv",
+					"status": 200,
+					"bytes": 16630831,
+					"sha256": "62ca20641f4120a843f93a30a4c5c2c92669c2a0d42711a6e1338a994d8cfa6c",
+					"content_type": "text/csv",
+					"last_modified": "Wed, 15 Oct 2025 07:04:08 GMT",
+					"etag": null,
+					"file": "files/ceo.karnataka.gov.in/A031.csv",
+					"headers": "headers/ceo.karnataka.gov.in/A031.csv.txt"
+				}
+			]
+		},
+		{
+			"url": "https://ceo.karnataka.gov.in/uploads/PDF%20FINAL%20AC%20WISE%2027_1793094730.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:34:16.124Z",
+					"final_url": "https://ceo.karnataka.gov.in/uploads/PDF%20FINAL%20AC%20WISE%2027_1793094730.pdf",
+					"status": 200,
+					"bytes": 4049041,
+					"sha256": "ac5794a300541e6e5a91bdcf0b999165f42b621233d2f78d302b0024eaf78dc0",
+					"content_type": "application/pdf",
+					"last_modified": "Tue, 27 Oct 2026 09:52:10 GMT",
+					"etag": null,
+					"file": "files/ceo.karnataka.gov.in/PDF FINAL AC WISE 27_1793094730.pdf",
+					"headers": "headers/ceo.karnataka.gov.in/PDF FINAL AC WISE 27_1793094730.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/132/2026-EROLLGEN-S10-132-SIR-FinalRoll-Revision1-ENG-169-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:31.231Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/132/2026-EROLLGEN-S10-132-SIR-FinalRoll-Revision1-ENG-169-WI.pdf",
+					"status": 200,
+					"bytes": 9142044,
+					"sha256": "e4012a8b16cf5a7ef97a967a26e012189d812286a63633936355084d6f6c17cd",
+					"content_type": "application/pdf",
+					"last_modified": "Mon, 26 Oct 2026 17:13:15 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-132-SIR-FinalRoll-Revision1-ENG-169-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-132-SIR-FinalRoll-Revision1-ENG-169-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/143/2026-EROLLGEN-S10-143-SIR-FinalRoll-Revision1-ENG-57-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:42.189Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/143/2026-EROLLGEN-S10-143-SIR-FinalRoll-Revision1-ENG-57-WI.pdf",
+					"status": 200,
+					"bytes": 11660471,
+					"sha256": "883d5ca4d8867477bf57684787c29998aa379316d423b20e245bec102c2ab9b4",
+					"content_type": "application/pdf",
+					"last_modified": "Tue, 27 Oct 2026 00:05:53 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-143-SIR-FinalRoll-Revision1-ENG-57-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-143-SIR-FinalRoll-Revision1-ENG-57-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/151/2026-EROLLGEN-S10-151-SIR-FinalRoll-Revision1-ENG-348-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:37.311Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/151/2026-EROLLGEN-S10-151-SIR-FinalRoll-Revision1-ENG-348-WI.pdf",
+					"status": 200,
+					"bytes": 7640406,
+					"sha256": "32e733860ce8a1db6d14100c5b02e8742f5c277b3e28b31b73d297027655d348",
+					"content_type": "application/pdf",
+					"last_modified": "Tue, 27 Oct 2026 01:01:47 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-151-SIR-FinalRoll-Revision1-ENG-348-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-151-SIR-FinalRoll-Revision1-ENG-348-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/153/2026-EROLLGEN-S10-153-SIR-FinalRoll-Revision1-ENG-535-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:27.169Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/153/2026-EROLLGEN-S10-153-SIR-FinalRoll-Revision1-ENG-535-WI.pdf",
+					"status": 200,
+					"bytes": 12665371,
+					"sha256": "d4ff0258806ef47a6ab37efbe32797c138e2d818dca8c3e872f416c03cdd622c",
+					"content_type": "application/pdf",
+					"last_modified": "Mon, 26 Oct 2026 20:52:00 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-153-SIR-FinalRoll-Revision1-ENG-535-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-153-SIR-FinalRoll-Revision1-ENG-535-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/155/2026-EROLLGEN-S10-155-SIR-FinalRoll-Revision1-ENG-42-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:44.018Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/155/2026-EROLLGEN-S10-155-SIR-FinalRoll-Revision1-ENG-42-WI.pdf",
+					"status": 200,
+					"bytes": 10250300,
+					"sha256": "1a7ee8da21fca1d4003f4347776b968718ea27000df0f59dab79aee9bf160ca2",
+					"content_type": "application/pdf",
+					"last_modified": "Mon, 26 Oct 2026 18:55:34 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-155-SIR-FinalRoll-Revision1-ENG-42-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-155-SIR-FinalRoll-Revision1-ENG-42-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/200/2026-EROLLGEN-S10-200-SIR-FinalRoll-Revision1-ENG-46-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:46.255Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/200/2026-EROLLGEN-S10-200-SIR-FinalRoll-Revision1-ENG-46-WI.pdf",
+					"status": 200,
+					"bytes": 12581455,
+					"sha256": "e520a5dd1803142b8973cf9d38f4dab43fae4e9ee04203a198981d52f4bacae6",
+					"content_type": "application/pdf",
+					"last_modified": "Mon, 26 Oct 2026 17:03:07 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-200-SIR-FinalRoll-Revision1-ENG-46-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-200-SIR-FinalRoll-Revision1-ENG-46-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/24/2026-EROLLGEN-S10-24-SIR-FinalRoll-Revision1-ENG-18-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:24.859Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/24/2026-EROLLGEN-S10-24-SIR-FinalRoll-Revision1-ENG-18-WI.pdf",
+					"status": 200,
+					"bytes": 11689621,
+					"sha256": "d96cfce2fe1abd65d65b4fe985a6fa3ace0e0aa2e4b99477dcf0707e08d9a0b1",
+					"content_type": "application/pdf",
+					"last_modified": "Mon, 26 Oct 2026 20:40:04 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-24-SIR-FinalRoll-Revision1-ENG-18-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-24-SIR-FinalRoll-Revision1-ENG-18-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/36/2026-EROLLGEN-S10-36-SIR-FinalRoll-Revision1-ENG-135-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:35.688Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/36/2026-EROLLGEN-S10-36-SIR-FinalRoll-Revision1-ENG-135-WI.pdf",
+					"status": 200,
+					"bytes": 12886071,
+					"sha256": "818415a8a3814e68b3bc89630ff3b8e4aedbe15e9ee32dca7c3665e47ac37fae",
+					"content_type": "application/pdf",
+					"last_modified": "Mon, 26 Oct 2026 14:54:32 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-36-SIR-FinalRoll-Revision1-ENG-135-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-36-SIR-FinalRoll-Revision1-ENG-135-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/36/2026-EROLLGEN-S10-36-SIR-FinalRoll-Revision1-ENG-53-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:22.389Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/36/2026-EROLLGEN-S10-36-SIR-FinalRoll-Revision1-ENG-53-WI.pdf",
+					"status": 200,
+					"bytes": 11992584,
+					"sha256": "a2510b1e4acbf25b5ce92e9d4ff173ccd5667ac7bb7d81f6cb7910d600b9f3b6",
+					"content_type": "application/pdf",
+					"last_modified": "Mon, 26 Oct 2026 18:22:42 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-36-SIR-FinalRoll-Revision1-ENG-53-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-36-SIR-FinalRoll-Revision1-ENG-53-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/4/2026-EROLLGEN-S10-4-SIR-FinalRoll-Revision1-ENG-174-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:29.445Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/4/2026-EROLLGEN-S10-4-SIR-FinalRoll-Revision1-ENG-174-WI.pdf",
+					"status": 200,
+					"bytes": 12627814,
+					"sha256": "7e15ef7fe46be77b3226fda6713d5b7d22710c647c0f7cd83e51a939e1894c5c",
+					"content_type": "application/pdf",
+					"last_modified": "Mon, 26 Oct 2026 18:43:32 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-4-SIR-FinalRoll-Revision1-ENG-174-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-4-SIR-FinalRoll-Revision1-ENG-174-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/53/2026-EROLLGEN-S10-53-SIR-FinalRoll-Revision1-ENG-212-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:33.179Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/53/2026-EROLLGEN-S10-53-SIR-FinalRoll-Revision1-ENG-212-WI.pdf",
+					"status": 200,
+					"bytes": 9087652,
+					"sha256": "d6a79a625b3949fa571b5f127eb969570482ecc8e5d8f9eddd3b9ca58315cf71",
+					"content_type": "application/pdf",
+					"last_modified": "Mon, 26 Oct 2026 15:33:36 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-53-SIR-FinalRoll-Revision1-ENG-212-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-53-SIR-FinalRoll-Revision1-ENG-212-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/92/2026-EROLLGEN-S10-92-SIR-FinalRoll-Revision1-ENG-118-WI.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:39.990Z",
+					"final_url": "https://voters.eci.gov.in/eroll/2026/s10/sir-finalroll/92/2026-EROLLGEN-S10-92-SIR-FinalRoll-Revision1-ENG-118-WI.pdf",
+					"status": 200,
+					"bytes": 11735427,
+					"sha256": "6a07a996a6693f7944ce448ecd2ca1a3e7b0f2e5d1fe2de4aaeb9ff09a6a876c",
+					"content_type": "application/pdf",
+					"last_modified": "Mon, 26 Oct 2026 21:36:49 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/2026-EROLLGEN-S10-92-SIR-FinalRoll-Revision1-ENG-118-WI.pdf",
+					"headers": "headers/voters.eci.gov.in/2026-EROLLGEN-S10-92-SIR-FinalRoll-Revision1-ENG-118-WI.pdf.txt"
+				}
+			]
+		},
+		{
+			"url": "https://voters.eci.gov.in/formspdf/Form_8_English.pdf",
+			"cited_in": ["src/lib/content.md"],
+			"captures": [
+				{
+					"retrieved_at": "2026-11-13T11:33:22.677Z",
+					"final_url": "https://voters.eci.gov.in/formspdf/Form_8_English.pdf",
+					"status": 200,
+					"bytes": 87686,
+					"sha256": "41d815f8462f48e130f001882b5a0c26e32540e8b2f6b7e589edd03c92c75c90",
+					"content_type": "application/pdf",
+					"last_modified": "Thu, 12 Nov 2026 07:20:18 GMT",
+					"etag": null,
+					"file": "files/voters.eci.gov.in/Form_8_English.pdf",
+					"headers": "headers/voters.eci.gov.in/Form_8_English.pdf.txt"
+				}
+			]
+		}
+	]
+}

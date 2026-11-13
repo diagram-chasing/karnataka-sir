@@ -21,14 +21,21 @@
 
 	let { data } = $props();
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any -- each chart has its own props
-	type Chart = { C: any; props?: Record<string, unknown>; title?: string; padX?: number };
+	type Chart = {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any -- each chart has its own props
+		C: any;
+		props?: Record<string, unknown>;
+		title?: string;
+		padX?: number;
+		// the chart takes a `stretch` prop: extra height it can spread through its rows
+		stretch?: boolean;
+	};
 	const COMPONENTS: Record<string, Chart> = {
 		ledger: { C: FindingsLedger, title: story.title },
 		constituency: { C: YourConstituency },
 		duplicates: { C: DuplicateCards },
 		garbled: { C: GarbledBooths },
-		names: { C: NameFaults },
+		names: { C: NameFaults, stretch: true },
 		funnel: { C: RollFunnel },
 		reasons: { C: ReasonsTable },
 		reused: { C: ReusedIds },
@@ -134,6 +141,7 @@
 	let notes = $state<string[]>([]);
 	let ready = $state(false);
 	let fitEl = $state<HTMLElement>();
+	let stretch = $state(0);
 	const fit = (cw: number, ch: number) => Math.min(stageW / cw, ch ? stageH / ch : 1);
 	const scale = $derived(fit(w, h));
 
@@ -184,7 +192,13 @@
 			if (score > best.score + 0.01) best = { score, w: cand };
 		}
 		w = best.w;
-		await settle();
+		const ch = await settle();
+		// a chart narrower in shape than the stage can take the leftover height as taller rows
+		const spare = Math.floor(stageH / fit(w, ch) - ch);
+		if (chart.stretch && spare > 0) {
+			stretch = spare;
+			await settle();
+		}
 		ready = true;
 	});
 </script>
@@ -231,7 +245,7 @@
 						style:padding-inline="{chart.padX ?? 0}px"
 						style:transform="scale({scale})"
 					>
-						<chart.C {...chart.props ?? {}} />
+						<chart.C {...chart.props ?? {}} {...chart.stretch ? { stretch } : {}} />
 					</div>
 				</div>
 			</div>

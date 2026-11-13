@@ -1,0 +1,24 @@
+GET https://ceo.karnataka.gov.in/csv_upload/english/A031.csv
+HTTP 200 https://ceo.karnataka.gov.in/csv_upload/english/A031.csv
+accept-ranges: bytes
+access-control-allow-credentials: true
+access-control-allow-headers: accept, content-type, X-Requested-With, X-Prototype-Version, X-CSRF-Token, authorization
+access-control-allow-methods: GET, POST, HEAD
+access-control-allow-origin: *
+cache-control: max-age=2592000
+connection: Keep-Alive
+content-length: 16630831
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; media-src 'self' https:; connect-src 'self'; frame-src 'self' https://www.youtube.com https://www.facebook.com https://platform.twitter.com https://www.instagram.com https://twitter.com https://x.com; object-src 'none'; base-uri 'self'; frame-ancestors 'self'
+content-type: text/csv
+date: Fri, 13 Nov 2026 11:34:16 GMT
+expires: Sun, 13 Dec 2026 11:34:16 GMT
+keep-alive: timeout=2, max=1000
+last-modified: Wed, 15 Oct 2025 07:04:08 GMT
+permissions-policy: geolocation=(), camera=(), microphone=()
+referrer-policy: strict-origin-when-cross-origin
+server: Apache
+strict-transport-security: max-age=31536000; includeSubDomains
+x-content-type-options: nosniff, nosniff
+x-firefox-spdy: h2
+x-frame-options: SAMEORIGIN, SAMEORIGIN
+x-xss-protection: 1; mode=block
