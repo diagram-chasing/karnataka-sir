@@ -1,0 +1,14 @@
+[
+  {"kind": "Printed as symbols", "n": 1318, "hatch": true, "note": "An old ASCII Kannada font displayed as Latin-1"},
+  {"kind": "A relationship word instead of a name", "n": 3291, "lead": true, "children": [
+    {"kind": "father", "n": 1418}, {"kind": "husband", "n": 533}, {"kind": "mother", "n": 527},
+    {"kind": "father father", "n": 343}, {"kind": "husband husband", "n": 135}, {"kind": "mother mother", "n": 102},
+    {"kind": "self", "n": 44}, {"kind": "late", "n": 28}, {"kind": "other", "n": 161}
+  ]},
+  {"kind": "Digits inside the name", "n": 3209},
+  {"kind": "A single letter or digit", "n": 1254},
+  {"kind": "A placeholder", "n": 869, "note": "nil, xxx, abc, a dot, a dash"},
+  {"kind": "A voter ID or phone number", "n": 55},
+  {"kind": "A date of birth", "n": 15},
+  {"kind": "An email address", "n": 5}
+]

@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@import './typography.css';
+@import './story.css';
+
+:root {
+	--radius: 0.425rem;
+	--background: oklch(1 0 0);
+	--foreground: oklch(0.145 0 0);
+	--popover: oklch(1 0 0);
+	--popover-foreground: oklch(0.145 0 0);
+	--primary: oklch(0.205 0 0);
+	--muted: oklch(0.97 0 0);
+	--muted-foreground: oklch(0.556 0 0);
+	--accent: oklch(0.97 0 0);
+	--accent-foreground: oklch(0.205 0 0);
+	--border: oklch(0.922 0 0);
+	--ring: oklch(0.708 0 0);
+}
+
+@theme {
+	/* System fonts (modernfontstacks.com). Helvetica Neue, Arial and Roboto share proportions, so lines
+	   break alike everywhere. Use weights 400/500/700 only: Helvetica Neue has no 600 or 900. */
+	--font-sans: 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, Roboto, sans-serif;
+	--font-heading: var(--font-sans);
+	--font-mono:
+		ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+@theme inline {
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-border: var(--border);
+	--color-ring: var(--ring);
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+@layer utilities {
+	.breakout-sm {
+		width: min(50rem, calc(100vw - 2rem));
+		margin-left: calc(50% - min(25rem, calc(50vw - 1rem)));
+	}
+
+	.breakout-md {
+		width: min(70rem, calc(100vw - 2rem));
+		margin-left: calc(50% - min(35rem, calc(50vw - 1rem)));
+	}
+
+	.breakout-lg {
+		width: min(90rem, calc(100vw - 2rem));
+		margin-left: calc(50% - min(45rem, calc(50vw - 1rem)));
+	}
+
+	.breakout-xl {
+		width: calc(100vw - 2rem);
+		margin-left: calc(50% - calc(50vw - 1rem));
+	}
+
+	/* on mobile, breakouts keep the text's edges so everything hangs from one gutter */
+	@media (max-width: 768px) {
+		.breakout-sm,
+		.breakout-md,
+		.breakout-lg,
+		.breakout-xl {
+			width: auto;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}

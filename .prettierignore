@@ -1,0 +1,15 @@
+# Package Managers
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lock
+bun.lockb
+
+# Miscellaneous
+/static/
+
+# Data
+/data/
+/src/lib/data/**/*.json
+/src/lib/assets/images/exhibits/manifest.json
+/social/

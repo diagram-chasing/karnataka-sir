@@ -1,0 +1,300 @@
+/* Fluid type and space scales after utopia.fyi: 320px (17px, 1.2) to 1440px (19px, 1.333).
+   Vertical space is in multiples of --leading. */
+:root {
+	--text-body: clamp(1.0625rem, 1.0268rem + 0.1786vw, 1.1875rem); /* 17 → 19px */
+	--leading: calc(var(--text-body) * 1.6);
+	--article-body: var(--text-body);
+	--measure: 40rem; /* 640px: ~66 characters a line at 19px, ~40 on a phone */
+	--gutter: 1.25rem;
+
+	/* type steps */
+	--text-micro: 0.75rem; /* 12px: chart sources and keys */
+	--text-caption: 0.875rem; /* 14px: captions, credits */
+	--text-1: clamp(1.275rem, 1.1875rem + 0.4375vw, 1.5813rem); /* 20 → 25px: dek, quotations */
+	--text-2: clamp(1.53rem, 1.365rem + 0.83vw, 2.1125rem); /* 24 → 34px: minor headings */
+	--text-3: clamp(1.8375rem, 1.559rem + 1.393vw, 2.8125rem); /* 29 → 45px: epigraph */
+	--text-4: clamp(2.2rem, 1.757rem + 2.214vw, 3.75rem); /* 35 → 60px: section titles */
+	--text-5: clamp(2.25rem, 1.464rem + 3.929vw, 5rem); /* 36 → 80px: the two Part breaks */
+
+	/* space steps */
+	--space-p: calc(0.75 * var(--leading)); /* between paragraphs */
+	--space-figure: calc(1.5 * var(--leading)); /* around figures, charts, quotations */
+	--space-section: clamp(4.5rem, 3.786rem + 3.571vw, 7rem); /* 72 → 112px: above a section */
+	--space-part: clamp(6rem, 4.857rem + 5.714vw, 10rem); /* 96 → 160px: above a Part */
+
+	/* modular scale */
+	--ms--1: 0.8125;
+	--ms-0: 1;
+	--ms-1: 1.2;
+	--ms-2: 1.4375;
+	--ms-3: 1.6875;
+	--ms-4: 2;
+	--ms-5: 2.5;
+	--ms-6: 3;
+	--ms-7: 3.5;
+	--ms-8: 4.3;
+}
+
+/* Rhythm + measure as Tailwind tokens for the rest of the site:
+   mt-leading / gap-leading / p-leading…, and max-w-measure. */
+@theme inline {
+	--spacing-leading: var(--leading);
+	--container-measure: var(--measure);
+}
+
+@layer base {
+	.article {
+		max-width: 67.5rem; /* 1080px content width; breakouts stretch to this */
+		margin-inline: auto;
+		padding: calc(2 * var(--leading)) var(--gutter) calc(3 * var(--leading));
+		font-size: var(--article-body);
+		line-height: var(--leading);
+		color: var(--foreground);
+		font-kerning: normal;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	/* Every top-level block sits on the measure; headings and breakouts override below. */
+	.article > :where(*) {
+		max-width: var(--measure);
+		margin: 0 auto var(--space-p);
+	}
+	.article > :where(.breakout, .breakout-sm, .breakout-md, .breakout-lg, .breakout-xl) {
+		max-width: none;
+	}
+
+	/* Headline: the one element allowed off the grid. */
+	.article > :where(h1) {
+		max-width: 45rem;
+		margin-bottom: var(--leading);
+		font-family: var(--font-heading);
+		font-size: clamp(calc(var(--ms-5) * 1rem), 1.75rem + 3.5vw, calc(var(--ms-7) * 1rem));
+		line-height: 1.05;
+		font-weight: 700;
+		text-align: center;
+		text-wrap: balance;
+	}
+
+	/* Lede: the paragraph straight after the headline. */
+	.article > :where(h1 + p) {
+		max-width: 35rem;
+		margin-bottom: calc(2 * var(--leading));
+		font-size: calc(var(--ms-1) * 1em);
+		line-height: calc(1.25 * var(--leading));
+		text-align: center;
+		text-wrap: balance;
+	}
+
+	/* Dek: must come after the h1 + p rule to win on source order (both :where). */
+	.article > :where(.dek) {
+		max-width: 35rem;
+		margin-bottom: calc(0.5 * var(--leading));
+		font-size: calc(var(--ms-1) * 1em);
+		line-height: calc(1.25 * var(--leading));
+		text-align: center;
+		text-wrap: balance;
+	}
+
+	/* Byline */
+	.article > :where(.byline) {
+		margin-bottom: calc(2 * var(--leading));
+		font-size: calc(var(--ms--1) * 1em);
+		text-align: center;
+		opacity: 0.7;
+	}
+
+	/* Headings, spaced in leading multiples to stay on the grid. */
+	.article > :where(h2) {
+		margin-top: calc(2 * var(--leading));
+		margin-bottom: calc(0.5 * var(--leading));
+		font-family: var(--font-heading);
+		font-size: calc(var(--ms-3) * 1em);
+		line-height: calc(1.5 * var(--leading));
+		font-weight: 700;
+	}
+	.article > :where(h3) {
+		margin-top: calc(1.5 * var(--leading));
+		margin-bottom: calc(0.5 * var(--leading));
+		font-family: var(--font-heading);
+		font-size: calc(var(--ms-2) * 1em);
+		line-height: var(--leading);
+		font-weight: 700;
+	}
+	.article > :where(h4) {
+		margin-top: calc(1.5 * var(--leading));
+		margin-bottom: calc(0.5 * var(--leading));
+		font-family: var(--font-heading);
+		font-size: calc(var(--ms-1) * 1em);
+		line-height: var(--leading);
+		font-weight: 700;
+	}
+	.article > :where(h5) {
+		margin-top: calc(1.5 * var(--leading));
+		margin-bottom: calc(0.5 * var(--leading));
+		font-size: 1em;
+		line-height: var(--leading);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+	.article > :where(h6) {
+		margin-top: calc(1.5 * var(--leading));
+		margin-bottom: calc(0.5 * var(--leading));
+		font-size: 1em;
+		line-height: var(--leading);
+		font-style: italic;
+		font-weight: 400;
+	}
+	/* Stacked headings need less air between them. */
+	.article > :where(h1, h2, h3, h4) + :where(h2, h3, h4, h5, h6) {
+		margin-top: 0;
+	}
+
+	/* no widows or orphans */
+	.article :where(p, li, figcaption, blockquote, dd) {
+		text-wrap: pretty;
+	}
+	.article :where(h1, h2, h3, h4, h5, h6) {
+		text-wrap: balance;
+	}
+
+	/* Lists */
+	.article > :where(ul, ol) {
+		padding-left: var(--leading);
+	}
+	.article > :where(ul) {
+		list-style: square;
+	}
+	.article :where(li) {
+		margin-bottom: 0;
+	}
+	.article :where(li > ul, li > ol) {
+		margin-bottom: 0;
+		padding-left: var(--leading);
+	}
+
+	/* Quotes */
+	.article > :where(blockquote) {
+		padding-left: calc(var(--leading) - 3px);
+		border-left: 3px solid var(--foreground);
+		font-style: italic;
+	}
+	.article > blockquote > :where(p) {
+		margin: 0 0 var(--space-p);
+	}
+	.article > blockquote > :where(p:last-child) {
+		margin-bottom: 0;
+	}
+	.article :where(cite) {
+		display: block;
+		font-style: normal;
+		font-size: calc(var(--ms--1) * 1em);
+	}
+
+	/* Thematic break */
+	.article > :where(hr) {
+		width: 6rem;
+		margin-top: var(--space-section);
+		margin-bottom: var(--space-section);
+		border: 0;
+		border-top: 3px solid var(--border);
+	}
+
+	/* Figures and images */
+	.article :where(img) {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin-inline: auto;
+	}
+	.article :where(figcaption) {
+		margin-top: calc(0.5 * var(--leading));
+		font-size: calc(var(--ms--1) * 1em);
+		line-height: var(--leading);
+		font-style: italic;
+		text-align: center;
+	}
+
+	/* Code. */
+	.article :where(:not(pre) > code) {
+		padding: 0.05em 0.3em;
+		background: var(--muted);
+		box-shadow: 0 0 0 1px var(--border);
+		font-size: 0.9em;
+	}
+	.article > :where(pre) {
+		padding: calc(0.5 * var(--leading)) var(--leading);
+		background: var(--muted);
+		border: 1px solid var(--border);
+		line-height: var(--leading);
+		overflow-x: auto;
+	}
+
+	/* Tables (top-level markdown tables only, so embedded components keep theirs). */
+	.article > :where(table) {
+		width: 100%;
+		border-collapse: collapse;
+		line-height: var(--leading);
+	}
+	.article > table :where(th, td) {
+		padding: calc(0.25 * var(--leading)) 0.75em;
+		border-bottom: 1px solid var(--border);
+		text-align: left;
+	}
+	.article > table :where(th) {
+		border-bottom: 2px solid var(--foreground);
+	}
+
+	/* Inline voice. */
+	.article :where(a) {
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		transition: color 120ms;
+	}
+	.article :where(a:hover) {
+		color: var(--primary);
+	}
+	.article :where(strong) {
+		font-weight: 700;
+	}
+	.article :where(small) {
+		font-size: calc(var(--ms--1) * 1em);
+	}
+	.article :where(mark) {
+		padding: 0 0.15em;
+		background: var(--accent);
+		color: var(--accent-foreground);
+	}
+
+	/* Methodology: the inner h2/p rules restore styles lost by not being direct children of .article. */
+	.article > :where(.methodology) {
+		font-size: 0.9em;
+	}
+	.methodology > :where(h2) {
+		margin: calc(2 * var(--leading)) 0 calc(0.5 * var(--leading));
+		font-family: var(--font-heading);
+		font-size: calc(var(--ms-3) * 1em);
+		font-weight: 700;
+		line-height: calc(1.1 * var(--leading));
+	}
+	.methodology > :where(p) {
+		margin-bottom: var(--space-p);
+		line-height: 1.6;
+		text-wrap: pretty;
+	}
+	.methodology > :where(p:last-child) {
+		margin-bottom: 0;
+	}
+
+	/* In-content breakouts get the same air above and below. */
+	.article > :where(.breakout, .breakout-sm, .breakout-md, .breakout-lg, .breakout-xl) {
+		margin-top: var(--space-figure);
+		margin-bottom: var(--space-figure);
+	}
+	/* Full-bleed breakout: spans the viewport. */
+	.article > .breakout.full-bleed {
+		width: 100vw;
+		margin-inline: calc(50% - 50vw);
+	}
+}

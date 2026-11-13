@@ -1,0 +1,827 @@
+/* Story styles, on top of the scaffold's typography.css. */
+
+:root {
+	/* the story's orange, palest to darkest */
+	--d-wx: #ffe2d6;
+	--d-w0: #ffbfa3;
+	--d-w1: #ff773d;
+	--d-w2: #fa6400;
+	--d-w3: #d64000;
+	--d-w4: #a32d00;
+	--story-orange: var(--d-w3);
+	--baseline-1: 1.5rem; /* the chart components space themselves with this */
+
+	/* Layered shadows after Josh Comeau's "Designing Beautiful Shadows"; the 1px ring keeps the edge on white. */
+	--shadow-ink: 24deg 10% 18%;
+	--shadow-sheet:
+		0 0 0 1px hsl(var(--shadow-ink) / 0.1), 0.5px 1px 1px hsl(var(--shadow-ink) / 0.07),
+		1px 2px 2px hsl(var(--shadow-ink) / 0.07), 2px 4px 4px hsl(var(--shadow-ink) / 0.06);
+	--shadow-print:
+		0 0 0 1px hsl(var(--shadow-ink) / 0.12), 0.5px 1px 1px hsl(var(--shadow-ink) / 0.09),
+		1px 2px 2px hsl(var(--shadow-ink) / 0.09), 2px 4px 4px hsl(var(--shadow-ink) / 0.09),
+		4px 8px 8px hsl(var(--shadow-ink) / 0.08), 8px 16px 16px hsl(var(--shadow-ink) / 0.07);
+	/* control tokens shared by charts, popovers and switches */
+	--ui-track: color-mix(in oklch, var(--foreground) 7%, var(--background));
+	--ui-track-hover: color-mix(in oklch, var(--foreground) 12%, var(--background));
+	--ui-track-inset: inset 0 1px 1.5px hsl(var(--shadow-ink) / 0.08);
+	--ui-line: color-mix(in oklch, var(--foreground) 22%, var(--background));
+	--ui-r-key: 3px;
+	--ui-r: 5px;
+	--ui-r-sheet: 6px;
+	--ui-focus:
+		0 0 0 1px color-mix(in oklch, var(--foreground) 22%, transparent),
+		0 0 0 4px color-mix(in oklch, var(--story-orange) 18%, transparent);
+}
+
+/* VoterCard states, set on the element the card is drawn in. */
+.card-grey {
+	color: rgb(43 43 43 / 0.36);
+	--card-fill: #fff;
+	--card-bar: rgb(43 43 43 / 0.16);
+}
+.card-orange {
+	color: var(--story-orange);
+	--card-fill: var(--d-w0);
+	--card-bar: var(--story-orange);
+}
+.card-gone {
+	color: rgb(43 43 43 / 0.5);
+}
+
+html {
+	overflow-x: clip; /* full-bleed bands are 100vw wide, scrollbar included */
+}
+
+body {
+	font-family: var(--font-sans);
+}
+
+/* Section headings (film titles, see FilmTitle.svelte). */
+.article > :is(h2, h3) {
+	max-width: min(100%, 48rem); /* display type wants a wider line than the prose */
+	padding-inline: 0.6em; /* room for a film title's info mark to hang in */
+	margin-top: var(--space-section);
+	margin-bottom: var(--leading);
+	font-size: var(--text-4);
+	line-height: 1.04;
+	font-weight: 700;
+	letter-spacing: -0.022em;
+	text-align: center;
+	text-wrap: balance;
+}
+
+.article :where(a) {
+	text-decoration-color: color-mix(in oklab, var(--foreground) 45%, transparent);
+}
+
+.article :where(a:hover) {
+	color: var(--story-orange);
+	text-decoration-color: currentColor;
+}
+
+/* The opening slogan. */
+.article > .epigraph {
+	max-width: 42rem;
+	margin-top: 0;
+	margin-bottom: calc(2 * var(--leading));
+	text-align: center;
+}
+
+.epigraph blockquote {
+	margin: 0;
+	font-family: var(--font-heading);
+	font-size: var(--text-3);
+	line-height: 1.12;
+	font-weight: 500;
+	letter-spacing: -0.015em;
+}
+
+.epigraph blockquote p {
+	margin: 0;
+	text-wrap: balance;
+}
+
+.epigraph blockquote p::before {
+	content: '\201C';
+}
+
+.epigraph blockquote p::after {
+	content: '\201D';
+}
+
+.epigraph footer {
+	margin-top: var(--space-p);
+	font-family: var(--font-sans);
+	font-size: var(--text-caption);
+	line-height: 1.45;
+	letter-spacing: 0;
+	text-wrap: balance;
+	color: var(--muted-foreground);
+}
+
+.article > blockquote {
+	margin-top: var(--space-figure);
+	margin-bottom: var(--space-figure);
+	padding: calc(0.75 * var(--leading)) var(--leading);
+	border: 0;
+	background: #fff;
+	box-shadow: var(--shadow-sheet);
+	font-family: var(--font-heading);
+	font-size: var(--text-1);
+	line-height: 1.32;
+	font-style: normal;
+}
+
+.article > blockquote :where(cite, footer) {
+	margin-top: var(--space-p);
+	font-family: var(--font-sans);
+	font-size: var(--text-caption);
+	line-height: 1.45;
+	color: var(--muted-foreground);
+}
+
+/* Documents and their captions. */
+.article > :where(figure) {
+	margin-top: var(--space-figure);
+	margin-bottom: var(--space-figure);
+}
+
+.article > figure.exhibit {
+	margin: var(--space-figure) auto;
+}
+
+.article figcaption {
+	margin-top: calc(0.4 * var(--leading));
+	font-size: var(--text-caption);
+	line-height: 1.45;
+	font-style: normal;
+	text-align: left;
+	text-wrap: pretty;
+	color: var(--muted-foreground);
+}
+
+.article :where(figcaption a) {
+	color: inherit;
+}
+
+.plate .sheet {
+	position: relative;
+	box-shadow: var(--shadow-sheet);
+}
+
+.plate .sheet img {
+	width: 100%;
+}
+
+.plate .sheet::after {
+	content: '';
+	position: absolute;
+	left: 11.2%;
+	top: 66.6%;
+	width: 59.2%;
+	height: 9.6%;
+	background: var(--d-w0);
+	mix-blend-mode: multiply;
+}
+
+/* The chart frame brings its own outer margin; the breakout already has one. */
+.article :is(.breakout-sm, .breakout-md, .breakout-lg) > figure.chart {
+	margin: 0;
+}
+
+/* Methodology: wider than the column so the DataTrail schematic fits; text stays at the measure. */
+.article > .methodology {
+	max-width: 50rem;
+	margin-top: var(--space-section);
+	padding: calc(1.25 * var(--leading)) var(--leading) var(--leading);
+	border-radius: var(--ui-r-sheet);
+	background: var(--ui-track);
+}
+
+.article > .methodology {
+	font-size: 0.875rem;
+}
+
+.methodology > p {
+	max-width: 40rem;
+	line-height: 1.6;
+}
+
+.methodology > p:first-of-type {
+	color: var(--muted-foreground);
+}
+
+@media (max-width: 40em) {
+	.article > .methodology {
+		padding: var(--leading) var(--gutter);
+	}
+}
+
+/* DataTrail schematic */
+.methodology > .trail {
+	max-width: none;
+	margin: calc(0.75 * var(--leading)) 0 var(--leading);
+	font-size: 0.75rem;
+	line-height: 1.3;
+}
+
+.trail-map {
+	position: relative;
+}
+
+.trail-map svg {
+	position: absolute;
+	inset: 0;
+	overflow: visible;
+}
+
+.trail-map path {
+	fill: none;
+	stroke: var(--story-orange);
+	stroke-width: 1.5px;
+	stroke-linejoin: round;
+}
+
+.trail-date {
+	position: absolute;
+	left: 0;
+	color: var(--muted-foreground);
+	font-weight: 700;
+	text-align: right;
+}
+
+.trail-doc {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	box-sizing: border-box;
+	padding: 0.5rem 0.65rem;
+	border-radius: 2px;
+	background: var(--background);
+	box-shadow: var(--shadow-sheet);
+	overflow: hidden;
+}
+
+.trail-name {
+	color: var(--foreground);
+	font-size: 0.8125rem;
+	font-weight: 700;
+}
+
+.trail-when,
+.trail-by {
+	color: var(--muted-foreground);
+	font-weight: 400;
+}
+
+.trail-what {
+	color: var(--foreground);
+}
+
+.trail-on {
+	position: absolute;
+	transform: translateY(-50%);
+	color: var(--foreground);
+	font-size: 0.6875rem;
+	line-height: 1.25;
+}
+
+/* on a phone the cards size to their text */
+.trail-map.narrow .trail-doc {
+	height: auto;
+}
+
+/* Restyles the scaffold footer's posts; Footer.svelte itself stays untouched. */
+footer .grid {
+	counter-reset: entry;
+}
+
+footer .feed-card {
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 5.5rem;
+	gap: 0 0.75rem;
+	padding: 1.75rem 0.75rem 0.75rem;
+	border: 1.5px solid color-mix(in oklch, var(--foreground) 70%, transparent);
+	border-radius: 0;
+	background: var(--background);
+	box-shadow: none;
+	font-size: 0.8125rem;
+	transition: background-color 150ms ease-out;
+}
+
+footer .feed-card:hover {
+	box-shadow: none;
+	background: color-mix(in oklch, var(--story-orange) 6%, var(--background));
+}
+
+footer .feed-card::before {
+	counter-increment: entry;
+	content: counter(entry);
+	position: absolute;
+	top: 0.5rem;
+	left: 0.75rem;
+	min-width: 1.75rem;
+	padding: 0.05rem 0.35rem;
+	box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 45%, transparent);
+	font-size: 0.6875rem;
+	font-weight: 700;
+	font-variant-numeric: tabular-nums;
+	text-align: center;
+}
+
+footer .feed-card > div:first-child {
+	grid-column: 2;
+	grid-row: 1;
+	width: 5.5rem;
+	height: 6.75rem;
+	box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 45%, transparent);
+}
+
+footer .feed-card > div:first-child img {
+	padding: 3px;
+	mix-blend-mode: normal;
+	filter: grayscale(1) contrast(1.05);
+}
+
+footer .feed-card > div:last-child {
+	grid-column: 1;
+	grid-row: 1;
+	gap: 0.3rem;
+	padding: 0;
+}
+
+footer .feed-card h3 {
+	font-family: var(--font-sans);
+	font-size: 0.9375rem;
+	line-height: 1.3;
+}
+
+footer .feed-card :is(h3, p, time)::before {
+	color: var(--muted-foreground);
+	font-weight: 400;
+}
+
+footer .feed-card h3::before {
+	content: 'Name : ';
+}
+
+footer .feed-card p::before {
+	content: 'About : ';
+}
+
+footer .feed-card time::before {
+	content: 'Published : ';
+}
+
+footer .feed-card time {
+	font-size: 0.75rem;
+	opacity: 1;
+}
+
+.methodology > :where(h2) {
+	margin-top: 0;
+	margin-bottom: calc(0.75 * var(--leading));
+	font-size: var(--text-2);
+	line-height: 1.15;
+	font-weight: 700;
+	letter-spacing: -0.015em;
+	text-wrap: balance;
+}
+
+/* Inline explainers: terms (Term), lakh/crore numbers (Num) and film titles (FilmTitle). */
+.term {
+	cursor: pointer;
+	text-decoration: underline dotted;
+	text-decoration-thickness: 2px;
+	text-decoration-color: color-mix(in oklab, var(--story-orange) 70%, transparent);
+	text-underline-offset: 0.24em;
+	text-decoration-skip-ink: none;
+	border-radius: 2px;
+	transition:
+		text-decoration-color 120ms,
+		background-color 120ms;
+}
+
+.term-last {
+	white-space: nowrap;
+}
+
+.term-i {
+	display: inline-block;
+	width: 0.62em;
+	height: 0.62em;
+	margin-left: 0.12em;
+	vertical-align: 0.22em; /* its top level with the capitals, like a footnote mark */
+	color: var(--story-orange);
+}
+
+.num {
+	position: relative;
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.25em;
+	margin: 0 0.05em;
+	padding: 0 0.32em 0 0.36em;
+	border: 0;
+	border-radius: var(--ui-r-key);
+	background: var(--ui-track);
+	box-shadow: inset 0 -1px 0 color-mix(in oklch, var(--foreground) 14%, transparent);
+	color: inherit;
+	font: inherit;
+	line-height: 1.35;
+	letter-spacing: inherit;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: background-color 120ms;
+}
+
+.num-i {
+	display: inline-block;
+	flex: none;
+	align-self: center;
+	width: 0.72em;
+	height: 0.72em;
+	color: color-mix(in oklch, var(--foreground) 55%, var(--background));
+	transition: color 120ms;
+}
+
+.num:active {
+	transform: translateY(0.5px);
+}
+
+/* a Hindi title's English meaning */
+.film-en {
+	display: block;
+	margin-top: calc(0.35 * var(--leading));
+	color: var(--muted-foreground);
+	font-size: var(--text-body);
+	font-style: italic;
+	font-weight: 400;
+	line-height: var(--leading);
+	letter-spacing: 0;
+}
+
+/* the mark takes no width, so the title stays centred */
+.film-last {
+	position: relative;
+	white-space: nowrap;
+}
+
+.film-i {
+	position: absolute;
+	left: 100%;
+	top: 0.13em; /* level with the capitals */
+	display: grid;
+	place-items: center;
+	width: 0.42em;
+	height: 0.42em;
+	margin-left: 0.14em;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var(--story-orange);
+	cursor: pointer;
+	border-radius: 50%;
+	transition: color 120ms;
+}
+
+.film-i svg {
+	width: 100%;
+	height: 100%;
+}
+
+/* a generous hit area for a small mark */
+.film-i::after {
+	content: '';
+	position: absolute;
+	inset: -0.5em;
+}
+
+@media (hover: hover) {
+	.term:hover {
+		background: color-mix(in oklch, var(--story-orange) 9%, transparent);
+		text-decoration-color: var(--story-orange);
+	}
+	.num:hover {
+		background: var(--ui-track-hover);
+	}
+	.num:hover .num-i {
+		color: var(--foreground);
+	}
+	.film-i:hover {
+		color: color-mix(in oklch, var(--story-orange) 75%, var(--foreground));
+	}
+}
+
+.term[data-state='open'] {
+	background: color-mix(in oklch, var(--story-orange) 9%, transparent);
+	text-decoration-color: var(--story-orange);
+}
+
+.num[data-state='open'] {
+	background: var(--ui-track-hover);
+}
+
+:is(.term, .num, .film-i):focus-visible {
+	outline: 2px solid var(--story-orange);
+	outline-offset: 2px;
+}
+
+/* the note (.gloss): unlayered, so it wins over the popover's Tailwind defaults */
+.gloss {
+	z-index: 50;
+	width: min(19rem, calc(100vw - 2rem));
+	padding: 0.875rem 1rem 1rem;
+	border: 0;
+	border-radius: var(--ui-r-sheet);
+	background: var(--background);
+	box-shadow: var(--shadow-print);
+	color: var(--foreground);
+	font-family: var(--font-sans);
+	font-size: 0.9375rem;
+	font-weight: 400;
+	line-height: 1.45;
+	letter-spacing: 0;
+	text-align: left;
+	text-wrap: pretty;
+}
+
+.gloss p {
+	margin: 0;
+}
+
+.gloss p + p {
+	margin-top: 0.375rem;
+}
+
+.gloss-title {
+	font-weight: 700;
+	text-wrap: balance;
+}
+
+.gloss-year,
+.gloss-en {
+	color: var(--muted-foreground);
+}
+
+.gloss-year {
+	font-weight: 400;
+}
+
+/* the units switch */
+.units-switch {
+	display: flex;
+	gap: 2px;
+	margin-top: 0.625rem;
+	padding: 3px;
+	border-radius: var(--ui-r);
+	background: var(--ui-track);
+	box-shadow: var(--ui-track-inset);
+}
+
+.units-switch button {
+	flex: 1;
+	padding: 0.45rem 0.5rem;
+	border: 0;
+	border-radius: var(--ui-r-key);
+	background: none;
+	color: var(--muted-foreground);
+	font: inherit;
+	font-size: 0.875rem;
+	font-weight: 700;
+	line-height: 1.2;
+	cursor: pointer;
+	transition:
+		background-color 120ms,
+		color 120ms;
+}
+
+.units-switch button:hover {
+	color: var(--foreground);
+}
+
+.units-switch button[aria-pressed='true'] {
+	background: var(--background);
+	box-shadow: var(--shadow-sheet);
+	color: var(--foreground);
+}
+
+.units-switch button:active {
+	transform: translateY(0.5px);
+}
+
+.units-switch button:focus-visible {
+	outline: 2px solid var(--story-orange);
+	outline-offset: 1px;
+}
+
+/* the film note */
+.gloss-film {
+	width: auto;
+	max-width: calc(100vw - 2rem);
+	padding: 0.75rem 0.75rem 0.875rem;
+	text-align: center;
+}
+
+.gloss-film img {
+	display: block;
+	width: auto;
+	height: 15rem;
+	max-width: 100%;
+	margin: 0 auto 0.75rem;
+	border-radius: 2px;
+	box-shadow: var(--shadow-sheet);
+}
+
+.gloss-film p {
+	max-width: 13rem;
+	margin-inline: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.gloss {
+		animation: none !important;
+	}
+}
+
+/* Sidenotes, pull quotes and excerpts (Note, Pull, Excerpt). Breakouts, steps, headings and Part
+   breaks clear them so they never overlap anything wider than the column. */
+.article {
+	counter-reset: sidenote;
+}
+
+.sn-mark {
+	margin: 0;
+	padding: 0 0 0 0.12em;
+	border: 0;
+	background: none;
+	color: var(--story-orange);
+	font: inherit;
+	font-size: 0.68em;
+	font-weight: 700;
+	font-variant-numeric: tabular-nums;
+	line-height: 1;
+	vertical-align: 0.6em;
+	cursor: pointer;
+}
+
+.sn-mark::before {
+	counter-increment: sidenote;
+	content: counter(sidenote);
+}
+
+/* a bigger target than the numeral, for a finger */
+.sn-mark {
+	position: relative;
+}
+
+.sn-mark::after {
+	content: '';
+	position: absolute;
+	inset: -0.6em -0.5em;
+}
+
+.sn-mark:focus-visible {
+	outline: 2px solid var(--story-orange);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* the note opens on the .gloss sheet at every width */
+.sn {
+	text-wrap: pretty;
+}
+
+.sn-src {
+	color: var(--foreground);
+	font-weight: 700;
+}
+
+.sn-src img {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	margin-right: 0.35em;
+	border-radius: 3px;
+	vertical-align: -0.14em;
+	box-shadow: 0 0 0 1px hsl(var(--shadow-ink) / 0.08);
+}
+
+/* the popover is portaled outside .article, so it carries the body links' style itself */
+.sn .sn-link {
+	color: var(--foreground);
+	text-decoration: underline;
+	text-decoration-color: color-mix(in oklab, var(--foreground) 45%, transparent);
+	text-underline-offset: 3px;
+	transition: color 120ms;
+}
+
+.sn .sn-link:hover {
+	color: var(--story-orange);
+	text-decoration-color: currentColor;
+}
+
+.sn .sn-link:focus-visible {
+	outline: 2px solid var(--story-orange);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+.sn-out {
+	display: inline-block;
+	width: 0.9em;
+	height: 0.9em;
+	margin-left: 0.1em;
+	vertical-align: -0.1em;
+}
+
+.pull {
+	margin-top: var(--leading);
+	margin-bottom: var(--leading);
+}
+
+.pull blockquote {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	box-shadow: none;
+	font-style: normal;
+}
+
+.pull blockquote p {
+	margin: 0;
+	font-size: var(--text-1);
+	font-weight: 700;
+	line-height: 1.3;
+	letter-spacing: -0.01em;
+	text-wrap: balance;
+}
+
+.pull:not(.own) blockquote p::before {
+	content: '\201C';
+}
+
+.pull:not(.own) blockquote p::after {
+	content: '\201D';
+}
+
+.article .pull figcaption {
+	margin-top: 0.5rem;
+}
+
+.excerpt blockquote {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	box-shadow: none;
+	font-size: 1.0625em;
+	font-style: normal;
+	line-height: 1.6;
+}
+
+.excerpt blockquote p {
+	margin: 0;
+}
+
+.excerpt mark {
+	padding: 0.05em 0.1em;
+	background: var(--d-w0);
+	color: inherit;
+	mix-blend-mode: multiply;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+@media (min-width: 77.5em) {
+	.pull {
+		float: left;
+		clear: left;
+		width: 13rem;
+		margin: 0.3em 0 var(--leading) calc((100% - var(--measure)) / 2 - 15.5rem);
+	}
+
+	.pull blockquote p {
+		font-size: 1.1875rem;
+	}
+
+	.article
+		> :is(
+			.breakout,
+			.breakout-sm,
+			.breakout-md,
+			.breakout-lg,
+			.breakout-xl,
+			.idtrail,
+			.part,
+			h2,
+			h3,
+			.methodology
+		) {
+		clear: both;
+	}
+}

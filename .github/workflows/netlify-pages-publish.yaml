@@ -1,0 +1,59 @@
+# Workflow for deploying to Netlify as Production
+name: Production Deploy
+
+on:
+  workflow_dispatch:
+
+  # Allows other workflows (e.g. a data-refresh cron) to reuse this deploy
+  workflow_call:
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: 'netlify'
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: netlify
+      url: ${{ steps.netlify.outputs.deploy-url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+      - name: Install Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build artifact
+        run: pnpm run build
+
+      - name: Deploy to Netlify
+        id: netlify
+        uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654 # v3.0
+        with:
+          production-deploy: true
+          production-branch: main
+          publish-dir: './build'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy from GitHub Actions'
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          enable-commit-status: true
+          overwrites-pull-request-comment: true
+          netlify-config-path: ./netlify.toml
+          github-deployment-environment: 'netlify-production'
+          github-deployment-description: 'Production Deployment on Netlify'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
