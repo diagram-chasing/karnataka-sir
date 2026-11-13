@@ -20,6 +20,8 @@ export const story = {
 	analyticsId: 'karnataka-sir',
 	/** Path under static/, resolved against SITE_BASE for og:image. */
 	shareImage: '/og/card.jpg',
+	/** The same card animated; replaces og:image where GIFs play, X keeps the still. */
+	shareImageAnimated: '/og/card.gif',
 	shareImageAlt:
 		'The Diagram Chasing logo and the title, No eligible citizen is left out (?), in a clearing among rows of grey voter cards, three of them orange.',
 	siteName: 'Diagram Chasing',

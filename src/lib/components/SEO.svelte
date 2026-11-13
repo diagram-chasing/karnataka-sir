@@ -39,7 +39,7 @@
 		shareTitle = story.title,
 		shareDescription,
 		shareImgPath = absUrl(story.shareImage),
-		shareImgAnimatedPath = '',
+		shareImgAnimatedPath = story.shareImageAnimated ? absUrl(story.shareImageAnimated) : '',
 		shareImgAlt = story.shareImageAlt,
 		ogType = 'article',
 		siteName = story.siteName,

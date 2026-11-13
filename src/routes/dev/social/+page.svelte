@@ -55,6 +55,8 @@
 	const isCover = !!still || data.c === 'cover';
 	if (!isCover && !chart) error(404, `No share image for "${data.c}"`);
 	const plain = !!F.plain;
+	// a moment in the title card's animation; `pnpm social` steps through it for the GIF
+	const ms = data.ms;
 	const safeY = F.safeY ?? 0;
 
 	// the studio's address, not the story's: short enough to type
@@ -198,7 +200,7 @@
 	data-chart={data.c}
 >
 	{#if isCover}
-		<CardField w={F.w} h={F.h} cell={cv.cell} clear={plain ? null : clearing} back={orange} />
+		<CardField w={F.w} h={F.h} cell={cv.cell} clear={plain ? null : clearing} back={orange} {ms} />
 		{#if !plain}
 			<div
 				class="clearing"

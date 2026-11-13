@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 import { createServer } from 'vite';
 import puppeteer from 'puppeteer-core';
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { execFileSync, spawnSync } from 'node:child_process';
-import { dirname } from 'node:path';
+import { dirname, join } from 'node:path';
+import { tmpdir } from 'node:os';
 import { BASE_PATH } from '../story.config.js';
 import { FORMATS, STILLS, CHARTS, imagePath } from '../src/lib/social.js';
+import { gifFrames } from '../src/lib/og-motion.js';
 
 const arg = (name) => {
 	const i = process.argv.indexOf(`--${name}`);
@@ -25,6 +27,7 @@ const CHROME =
 	].find(existsSync);
 if (!CHROME) throw new Error('No Chrome found: set CHROME_PATH');
 const MAGICK = spawnSync('magick', ['-version']).status === 0;
+const GIFSICLE = spawnSync('gifsicle', ['--version']).status === 0;
 
 // --- what to shoot --------------------------------------------------------------------------
 const jobs = [];
@@ -64,6 +67,50 @@ async function shoot(page, job) {
 		writeFileSync(file, await page.screenshot({ type: 'jpeg', quality: 90, clip }));
 	}
 	console.log(`  ${file}`);
+	if (job.gif) await animate(page, job, clip);
+}
+
+// the GIF: one load and screenshot per frame of the timeline
+async function animate(page, job, clip) {
+	if (!MAGICK || !GIFSICLE) {
+		console.warn(`  skipped ${job.gif}: needs magick and gifsicle`);
+		return;
+	}
+	const dir = mkdtempSync(join(tmpdir(), 'og-gif-'));
+	try {
+		const frames = gifFrames();
+		const png = (i) => join(dir, `${String(i).padStart(3, '0')}.png`);
+		for (const [i, [ms]] of frames.entries()) {
+			await page.goto(`${origin}${BASE_PATH}/dev/social?${job.q}&ms=${ms}`, {
+				waitUntil: 'networkidle0'
+			});
+			await page.waitForSelector('.frame.ready', { timeout: 60_000 });
+			writeFileSync(png(i), await page.screenshot({ type: 'png', clip }));
+		}
+		// one palette for every frame, from the still and the frames mid-fade, and no dither: a
+		// pixel that has not moved keeps its colour index, so the GIF stores only what changes
+		const palette = join(dir, 'palette.png');
+		const mid = [0, ...[0.25, 0.5, 0.75, 0.9].map((p) => Math.round(p * (frames.length - 1)))];
+		execFileSync('magick', [
+			...mid.map(png),
+			'-append',
+			'+dither',
+			'-colors',
+			'32',
+			'-unique-colors',
+			palette
+		]);
+		const args = ['-O3', '--loopcount=forever'];
+		for (const [i, [, delay]] of frames.entries()) {
+			const f = join(dir, `${String(i).padStart(3, '0')}.gif`);
+			execFileSync('magick', [png(i), '-strip', '+dither', '-remap', palette, f]);
+			args.push('-d', String(delay), f);
+		}
+		execFileSync('gifsicle', [...args, '-o', job.gif]);
+		console.log(`  ${job.gif}`);
+	} finally {
+		rmSync(dir, { recursive: true, force: true });
+	}
 }
 
 try {

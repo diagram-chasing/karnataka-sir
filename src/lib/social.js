@@ -56,6 +56,7 @@ export const STILLS = [
 		h: 630,
 		scale: 1,
 		out: `static${story.shareImage}`,
+		gif: `static${story.shareImageAnimated}`,
 		cover: { cell: 46, orange: 4 }
 	},
 	{
