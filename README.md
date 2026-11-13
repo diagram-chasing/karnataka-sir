@@ -58,14 +58,6 @@ Special Intensive Revision. It's published at
 - `src/lib/social.js`: The share image formats and charts. `pnpm social` writes
   the link preview to `static/og/card.jpg` and the rest to `social/`.
 
-## Deploy the story
-
-- Push to `main` to deploy a preview to Netlify.
-- Run the **Production Deploy** action in GitHub Actions to deploy to
-  production.
-
-The story reaches `diagramchasing.fun/2026/karnataka-sir` through a proxy rule
-in the Diagram Chasing site repository.
 
 ## Data and sources
 
@@ -74,8 +66,7 @@ Edellu Karnataka. The anonymized final-roll dataset is
 [on GitHub](https://github.com/diagram-chasing/karnataka-sir-voter-rolls-data).
 The story's methodology section describes how the rolls were matched.
 
-Claude Opus 5.5 was used for development and analysis, but not to write the
-story's text.
+Claude Opus 5.5 was used for development and analysis.
 
 ## License
 
