@@ -28,3 +28,11 @@ vite.config.ts.timestamp-*
 # Archived source documents: large, and the rolls carry voters' personal details.
 # Their hashes, headers and proofs in receipts/ are committed.
 /receipts/files
+dev/
+
+# Rendered clips and music tracks for social: large, and the tracks are licensed audio.
+*.mp3
+*.wav
+*.mp4
+*.mov
+*.m4a

@@ -32,7 +32,7 @@
 	/** @type {HTMLUListElement | undefined} */
 	let list = $state();
 
-	const results = $derived(search(query).slice(0, 8));
+	const results = $derived(search(query));
 	const shown = $derived(editing ? query : (BY_AC.get(ac)?.name ?? ''));
 
 	/** @param {number} next */
@@ -159,8 +159,12 @@
 		top: calc(100% + 6px);
 		left: 0;
 		right: 0;
-		max-height: 18rem;
+		/* seven and a half rows, so the cut row says the list goes on */
+		--row: calc(0.9rem + 0.9375rem * 1.25);
+		max-height: calc(4px + 7.5 * var(--row));
 		overflow-y: auto;
+		overscroll-behavior: contain;
+		scrollbar-width: thin;
 		margin: 0;
 		padding: 4px;
 		list-style: none;

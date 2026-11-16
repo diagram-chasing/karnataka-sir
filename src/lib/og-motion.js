@@ -15,7 +15,7 @@ export const MOVING = [RESTORE.at, RETURN.at + 3 * RETURN.gap + RETURN.dur];
 export const LOOP_MS = MOVING[1] + HOLD;
 
 /** cubic-bezier(x1, y1, x2, y2) as a function of time in [0, 1]. */
-function bezier(x1, y1, x2, y2) {
+export function bezier(x1, y1, x2, y2) {
 	const at = (a, b, t) => 3 * a * t * (1 - t) ** 2 + 3 * b * t * t * (1 - t) + t ** 3;
 	const slope = (a, b, t) => 3 * a * (1 - t) ** 2 + 6 * (b - a) * t * (1 - t) + 3 * (1 - b) * t * t;
 	return (x) => {
@@ -28,10 +28,10 @@ function bezier(x1, y1, x2, y2) {
 		return at(y1, y2, Math.min(1, Math.max(0, t)));
 	};
 }
-const easeOut = bezier(0.23, 1, 0.32, 1);
-const easeInOut = bezier(0.77, 0, 0.175, 1);
+export const easeOut = bezier(0.23, 1, 0.32, 1);
+export const easeInOut = bezier(0.77, 0, 0.175, 1);
 /** An underdamped spring, bounce 0.25, settled by the end of its span. */
-const spring = (t) => {
+export const spring = (t) => {
 	const zeta = 0.75;
 	const w = 2 * Math.PI * 1.25;
 	const wd = w * Math.sqrt(1 - zeta * zeta);
@@ -40,7 +40,7 @@ const spring = (t) => {
 		: 1 - Math.exp(-zeta * w * t) * (Math.cos(wd * t) + ((zeta * w) / wd) * Math.sin(wd * t));
 };
 
-const progress = (ms, at, dur, ease) => ease(Math.min(1, Math.max(0, (ms - at) / dur)));
+export const progress = (ms, at, dur, ease) => ease(Math.min(1, Math.max(0, (ms - at) / dur)));
 
 /**
  * Each card's layers at `ms`: the grey card, the dashed blank and the orange card, as opacity
