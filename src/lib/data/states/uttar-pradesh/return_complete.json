@@ -1,0 +1,30 @@
+[
+	{
+		"category": "shifted",
+		"listed": 2890084,
+		"dropped": 2802389,
+		"back": 12680,
+		"same_id_live": 66
+	},
+	{
+		"category": "absent",
+		"listed": 1490260,
+		"dropped": 1418902,
+		"back": 13293,
+		"same_id_live": 63
+	},
+	{
+		"category": "dead",
+		"listed": 1036753,
+		"dropped": 1025350,
+		"back": 800,
+		"same_id_live": 45
+	},
+	{
+		"category": "duplicate",
+		"listed": 569056,
+		"dropped": 526421,
+		"back": 1952,
+		"same_id_live": 7
+	}
+]

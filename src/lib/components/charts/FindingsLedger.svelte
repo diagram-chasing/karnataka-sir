@@ -1,45 +1,28 @@
 <script>
 	import ChartFrame from './ChartFrame.svelte';
 	import { lakh } from './theme.js';
-	import {
-		STRUCK_OFF,
-		CAME_BACK_ROUNDED,
-		DEAD_CAME_BACK,
-		DUPLICATE_PEOPLE,
-		GARBLED_NAMES,
-		REUSED_IDS,
-		NO_HOUSE_NUMBER
-	} from '$data/totals.js';
+	import { FINDINGS } from '$data/states/findings.js';
+	import { BY_SLUG, ESSAY } from '$data/states/index.js';
+	import { shown, worded } from '$data/states/show.js';
 
-	const HALVES = [
-		{
-			head: 'No ineligible person is included',
-			rows: [
-				['People on the roll more than once in their own booth', DUPLICATE_PEOPLE],
-				['Voter IDs on the roll in two constituencies', 461],
-				['House numbers with 100 or more voters', 381],
-				['Voters with no real house number', NO_HOUSE_NUMBER],
-				['Names printed as symbols', GARBLED_NAMES],
-				["Pairs of voters who are each other's father", 296]
-			]
-		},
-		{
-			head: 'No eligible citizen is left out',
-			rows: [
-				['Voters struck off before the draft roll', STRUCK_OFF],
-				['Of those, back on the final roll', CAME_BACK_ROUNDED],
-				['Told they are not on the 2002 roll, though they are', 3115],
-				['Struck off after a notice under the nine-month rule', 4954],
-				['Marked dead, and back on the final roll', DEAD_CAME_BACK],
-				["New voters holding a removed voter's ID", REUSED_IDS]
-			]
-		}
-	];
+	/** @type {{ state?: import('$data/states/findings.js').StateFile }} */
+	let { state = /** @type {any} */ (BY_SLUG.get(ESSAY)) } = $props();
+
+	const HEADS = { 1: 'No ineligible person is included', 2: 'No eligible citizen is left out' };
+	const halves = $derived(
+		/** @type {const} */ ([1, 2]).map((half) => ({
+			head: HEADS[half],
+			rows: FINDINGS.filter((f) => f.half === half).map((f) => ({
+				what: worded(f.label, state),
+				n: shown(f.key, state)
+			}))
+		}))
+	);
 </script>
 
-<ChartFrame source="Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing">
+<ChartFrame source={state.credit ?? ''}>
 	<div class="halves">
-		{#each HALVES as h (h.head)}
+		{#each halves as h (h.head)}
 			<table class="grid">
 				<thead>
 					<tr>
@@ -48,10 +31,10 @@
 					</tr>
 				</thead>
 				<tbody>
-					{#each h.rows as [what, n] (what)}
+					{#each h.rows as r (r.what)}
 						<tr>
-							<td>{what}</td>
-							<td class="dim">{lakh(n)}</td>
+							<td>{r.what}</td>
+							<td class="dim">{r.n == null ? '–' : lakh(r.n)}</td>
 						</tr>
 					{/each}
 				</tbody>

@@ -1,0 +1,88 @@
+{
+	"slug": "uttar-pradesh",
+	"name": "Uttar Pradesh",
+	"eciCode": "S24",
+	"constituencies": 403,
+	"lastSirYear": 2003,
+	"finalRollDate": "2026-04-10",
+	"credit": "Sources: Election Commission of India; CEO Uttar Pradesh; s1d labs; Diagram Chasing",
+	"documents": {
+		"before": {
+			"name": "2024 general election roll",
+			"when": "2024",
+			"by": "Election Commission of India",
+			"roll": "2024-ge-final",
+			"url": "https://voters.eci.gov.in/download-eroll?stateCode=S24",
+			"maker": "s1d labs",
+			"makerUrl": "https://labs.s1d.me/up-eci"
+		},
+		"draft": {
+			"name": "Draft roll",
+			"when": "6 January 2026",
+			"by": "Election Commission of India",
+			"roll": "2026-sir-draft",
+			"url": "https://voters.eci.gov.in/download-eroll?stateCode=S24",
+			"maker": "s1d labs",
+			"makerUrl": "https://labs.s1d.me/up-eci"
+		},
+		"final": {
+			"name": "Final roll",
+			"when": "10 April 2026",
+			"by": "Election Commission of India",
+			"roll": "2026-sir-final",
+			"url": "https://voters.eci.gov.in/download-eroll?stateCode=S24",
+			"maker": "s1d labs",
+			"makerUrl": "https://labs.s1d.me/up-eci"
+		},
+		"next": {
+			"name": "2027 draft roll",
+			"when": null,
+			"by": "Election Commission of India",
+			"roll": "2027-ssr-draft",
+			"url": "https://voters.eci.gov.in/download-eroll?stateCode=S24",
+			"maker": "s1d labs",
+			"makerUrl": "https://labs.s1d.me/up-eci"
+		},
+		"removals": {
+			"name": "ASDDR lists",
+			"when": "January 2026",
+			"by": "Election Commission of India and CEO Uttar Pradesh. Compiled by Diagram Chasing",
+			"url": "https://ceouttarpradesh.nic.in/ASD_SIR2026.aspx"
+		},
+		"report": {
+			"name": "Final total",
+			"when": "10 April 2026",
+			"by": "CEO's press conference, via News On Air",
+			"url": "https://newsonair.gov.in/uttar-pradesh-electorate-grows-by-over-84-lakh-after-completion-of-sir-exercise"
+		}
+	},
+	"findings": {
+		"duplicatesInBooth": 23261,
+		"idInTwoConstituencies": 1752,
+		"crowdedHouses": 1828,
+		"noHouseNumber": 1267193,
+		"garbledNames": null,
+		"mutualFathers": 101,
+		"struckOff": 27340992,
+		"cameBack": 47748,
+		"unmapped": null,
+		"nineMonthRule": null,
+		"deadCameBack": 901,
+		"reusedIds": 7
+	},
+	"mapCredit": "Boundaries: DataMeet",
+	"coverage": {
+		"parts": 177516,
+		"held": 173498
+	},
+	"updated": "24 November 2026",
+	"moreSources": [
+		{
+			"name": "Totals before the revision, and reasons",
+			"when": "6 January 2026",
+			"by": "CEO's press release, via Business Standard",
+			"url": "https://www.business-standard.com/india-news/up-sir-draft-voter-list-out-12-55-crore-of-15-44-crore-voters-retained-126010600689_1.html"
+		}
+	],
+	"noneFound": []
+}

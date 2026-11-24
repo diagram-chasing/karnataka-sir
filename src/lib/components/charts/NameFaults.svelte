@@ -3,8 +3,8 @@
 	import ChartFrame from './ChartFrame.svelte';
 	import { hoverTap } from './hoverTap.js';
 	import HoverCard from './HoverCard.svelte';
-	import raw from '$data/name_faults.json';
-	import { inr, pct } from './theme.js';
+	import karnataka from '$data/name_faults.json';
+	import { inr, lakh, pct } from './theme.js';
 
 	/** @type {Record<string, string[]>} */
 	const EXAMPLES = {
@@ -19,19 +19,40 @@
 	};
 	const LABELS = { 'A voter ID or phone number': 'An ID or phone number' };
 
-	const lead = raw.find((d) => d.lead);
+	/**
+	 * Karnataka's unless another state's kinds are passed. A kind with `children` is drawn as its
+	 * children: Karnataka's relationship words (`lead`), or another state's breakdown of one kind.
+	 * `stretch` is extra height to spread across the rows, for a frame taller than the chart (the
+	 * share images).
+	 * @type {{ data?: any[], title?: string, dek?: string, note?: string, source?: string, stretch?: number, axis?: string }}
+	 */
+	let {
+		data: raw = karnataka,
+		title = 'About 10,000 voters have something other than a name where a name should be',
+		dek = "Entries printed in place of a voter's or relative's name, by kind, Karnataka, final roll, October 2026",
+		note = '',
+		source = 'Source: Diagram Chasing',
+		stretch = 0,
+		axis = 'Printed in place of a name'
+	} = $props();
+
+	// svelte-ignore state_referenced_locally
 	const rows = [
-		...lead.children.map((c) => ({
-			key: `w:${c.kind}`,
-			label: c.kind === 'other' ? 'other words' : `“${c.kind}”`,
-			n: c.n,
-			word: true,
-			hatch: false,
-			note: 'printed as the relative’s name',
-			spec: EXAMPLES[c.kind] ?? [c.kind]
-		})),
 		...raw
-			.filter((d) => !d.lead)
+			.filter((d) => d.children)
+			.flatMap((d) =>
+				d.children.map((/** @type {any} */ c) => ({
+					key: `w:${c.kind}`,
+					label: !d.lead ? c.kind : c.kind === 'other' ? 'other words' : `“${c.kind}”`,
+					n: c.n,
+					word: true,
+					hatch: false,
+					note: d.lead ? 'printed as the relative’s name' : d.kind,
+					spec: EXAMPLES[c.kind] ?? (d.lead ? [c.kind] : undefined)
+				}))
+			),
+		...raw
+			.filter((d) => !d.children)
 			.map((d) => ({
 				key: `k:${d.kind}`,
 				label: LABELS[d.kind] ?? d.kind,
@@ -39,19 +60,21 @@
 				word: false,
 				hatch: !!d.hatch,
 				note: d.note ?? '',
-				spec: EXAMPLES[d.kind]
+				spec: d.words ?? EXAMPLES[d.kind]
 			}))
 	].sort((a, b) => b.n - a.n);
 	const total = rows.reduce((s, d) => s + d.n, 0);
 
-	/** extra height to spread across the rows, for a frame taller than the chart (the share images) */
-	let { stretch = 0 } = $props();
-
 	let width = $state(680);
 	const w = $derived(Math.max(width, 300));
-	const narrow = $derived(w < 540);
-	const LAB = $derived(narrow ? 0 : 176);
-	const END = 52;
+	// the label column is as wide as the longest label, and the space after the bars as wide as the
+	// largest count; where the labels would take over two fifths of the chart they go above the bars
+	const longest = Math.max(...rows.map((r) => r.label.length));
+	const WANT = Math.max(176, Math.ceil(longest * 7.3) + 18);
+	const narrow = $derived(w < 540 || WANT > w * 0.42);
+	const LAB = $derived(narrow ? 0 : WANT);
+	const top = Math.max(...rows.map((r) => r.n));
+	const END = Math.max(52, inr(top).length * 8.5 + 14);
 	const B = $derived(w - LAB - END);
 	const RH = $derived((narrow ? 52 : 30) + stretch / rows.length);
 	const BAR = $derived(Math.min(28, 22 + stretch / rows.length / 2));
@@ -74,18 +97,37 @@
 		switchTimer = setTimeout(() => (switching = false), MORPH + 50);
 	}
 
-	const xlog = $derived(scaleLog().domain([1, 10000]).range([0, B]));
-	const xlin = $derived(scaleLinear().domain([0, 3500]).range([0, B]));
+	// Karnataka's axes as they were; a state with larger counts gets the next power of ten
+	const LOG_MAX = Math.max(10000, 10 ** Math.ceil(Math.log10(top)));
+	const LIN_MAX = top <= 3500 ? 3500 : top * 1.02;
+	const xlog = $derived(scaleLog().domain([1, LOG_MAX]).range([0, B]));
+	const xlin = $derived(scaleLinear().domain([0, LIN_MAX]).range([0, B]));
 	/** @param {number} v */
 	const x = (v) => (log ? xlog(Math.max(v, 1)) : xlin(v));
 
-	const LOG_TICKS = [1, 10, 100, 1000, 10000];
-	const LIN_TICKS = [0, 1000, 2000, 3000];
+	const LOG_TICKS = Array.from({ length: Math.round(Math.log10(LOG_MAX)) + 1 }, (_, i) => 10 ** i);
+	const LIN_TICKS =
+		top <= 3500 ? [0, 1000, 2000, 3000] : scaleLinear().domain([0, LIN_MAX]).ticks(4);
+	/** Axis labels: full digits to a thousand, then lakh so a long axis does not collide. */
+	const tick = (/** @type {number} */ v) => (v >= 100000 ? lakh(v, 0) : inr(v));
 
 	/** @param {(typeof rows)[number]} r */
 	const tone = (r) => (r.word ? 'lead' : r.hatch ? 'hatch' : 'pale');
 	/** @param {string[]} spec */
-	const fill = (spec) => Array.from({ length: 80 }, (_, i) => spec[i % spec.length]).join(' ');
+	const fill = (spec) =>
+		!spec ? '' : Array.from({ length: 80 }, (_, i) => spec[i % spec.length]).join(' ');
+	/**
+	 * A sample is a word as printed, or the word with its meaning in English: `[printed, meaning]`.
+	 * Where any sample has a meaning the bar is set as pairs, the printed word in ink and its meaning
+	 * lighter after it, so a reader who does not read the script still gets the row.
+	 * @param {(string | string[])[] | undefined} spec
+	 */
+	const glossed = (spec) => !!spec?.some((w) => Array.isArray(w));
+	/** @param {(string | string[])[]} spec */
+	const pairs = (spec) =>
+		Array.from({ length: 40 }, (_, i) => spec[i % spec.length]).map((w) =>
+			Array.isArray(w) ? w : [w, '']
+		);
 	/** @param {string} key */
 	const cid = (key) => `nf-${key.replace(/\W/g, '_')}`;
 
@@ -98,11 +140,7 @@
 	};
 </script>
 
-<ChartFrame
-	title="About 10,000 voters have something other than a name where a name should be"
-	dek="Entries printed in place of a voter's or relative's name, by kind, Karnataka, final roll, October 2026"
-	source="Source: Diagram Chasing"
->
+<ChartFrame {title} {dek} {note} {source}>
 	{#snippet controls()}
 		<div class="seg" role="group" aria-label="Scale">
 			<button aria-pressed={log} onclick={() => setLog(true)}>Log</button>
@@ -137,20 +175,24 @@
 				class="axt"
 				x={narrow ? 0 : LAB - 12}
 				y={narrow ? AX + 14 : 12}
-				text-anchor={narrow ? 'start' : 'end'}>Printed in place of a name</text
+				text-anchor={narrow ? 'start' : 'end'}>{axis}</text
 			>
 
 			<g transform="translate({LAB}, 0)">
 				{#each LOG_TICKS as v (v)}
 					<g class="tk" style:transform="translateX({x(v)}px)" style:opacity={log ? 1 : 0}>
 						<line y1={AX - 8} y2={H} />
-						<text y="12" text-anchor={v === 1 ? 'start' : 'middle'}>{inr(v)}</text>
+						<text
+							y="12"
+							text-anchor={v === 1 ? 'start' : v === LOG_MAX && LOG_MAX > 10000 ? 'end' : 'middle'}
+							>{narrow && LOG_MAX > 10000 && v === LOG_MAX / 10 ? '' : tick(v)}</text
+						>
 					</g>
 				{/each}
 				{#each LIN_TICKS as v (v)}
 					<g class="tk" style:transform="translateX({x(v)}px)" style:opacity={log ? 0 : 1}>
 						<line y1={AX - 8} y2={H} />
-						<text y="12" text-anchor={v === 0 ? 'start' : 'middle'}>{inr(v)}</text>
+						<text y="12" text-anchor={v === 0 ? 'start' : 'middle'}>{tick(v)}</text>
 					</g>
 				{/each}
 			</g>
@@ -178,7 +220,16 @@
 							vector-effect="non-scaling-stroke"
 							style:transform="scaleX({sx})"
 						/>
-						<text class="words" x="6" clip-path="url(#{cid(r.key)})">{fill(r.spec)}</text>
+						{#if glossed(r.spec)}
+							<text class="words" x="6" clip-path="url(#{cid(r.key)})"
+								>{#each pairs(r.spec) as [word, means], k (k)}<tspan class="as-printed"
+										>{word}</tspan
+									>{#if means}<tspan class="means">{' ' + means}</tspan>{/if}<tspan>{'    '}</tspan
+									>{/each}</text
+							>
+						{:else}
+							<text class="words" x="6" clip-path="url(#{cid(r.key)})">{fill(r.spec)}</text>
+						{/if}
 						<text class="val grow" style:transform="translateX({sx * B + 8}px)">{inr(r.n)}</text>
 					</g>
 				</g>
@@ -289,6 +340,10 @@
 		font-size: 12px;
 		white-space: pre;
 		pointer-events: none;
+	}
+	/* a printed word and its meaning: the word in ink, the meaning in the bar's quieter tone */
+	.words .as-printed {
+		fill: var(--c-ink);
 	}
 	.lead .words {
 		fill: rgb(255 255 255 / 0.85);

@@ -3,11 +3,31 @@
 	import ChartFrame from './ChartFrame.svelte';
 	import VoterCard, { CARD_W, CARD_H, CELL_ASPECT } from '$lib/components/VoterCard.svelte';
 	import { seeded } from '$lib/components/CardField.svelte';
-	import returns from '$data/asddo_return.json';
+	import karnataka from '$data/asddo_return.json';
 	import { lakh, inr } from './theme.js';
 
-	// the hero's unit, so the orange here adds up to the hero's three cards
-	const UNIT = 5000;
+	/**
+	 * Karnataka's unless another state's returns are passed.
+	 * @type {{ returns?: { category: string, dropped: number, back: number }[], dek?: string, source?: string, unit?: number }}
+	 */
+	let {
+		returns = karnataka,
+		dek = 'People struck off before the draft roll by the reason given, and those added back on the final roll, Karnataka',
+		source = 'Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing',
+		// people per card: the hero's unit for Karnataka, so the orange here adds up to the hero's three
+		// cards; a larger state passes a larger one to keep the wall a readable height
+		unit: UNIT = 5000
+	} = $props();
+
+	// one headline for every state: "For every 708 people struck off, only one came back"
+	// svelte-ignore state_referenced_locally
+	const per = Math.round(
+		returns.reduce((s, g) => s + g.dropped, 0) /
+			Math.max(
+				1,
+				returns.reduce((s, g) => s + g.back, 0)
+			)
+	);
 
 	/** @type {Record<string, string>} */
 	const MARKED = {
@@ -17,6 +37,7 @@
 		duplicate: 'marked already enrolled elsewhere'
 	};
 
+	// svelte-ignore state_referenced_locally
 	const blocks = [...returns]
 		.sort((a, b) => b.dropped - a.dropped)
 		.map((g, gi) => {
@@ -63,12 +84,12 @@
 </script>
 
 <ChartFrame
-	title="For every 708 people struck off, only one came back"
-	dek="People struck off before the draft roll by the reason given, and those added back on the final roll, Karnataka"
+	title="For every {inr(per)} people struck off, only one came back"
+	{dek}
 	note="Each card represents {inr(
 		UNIT
-	)} people removed, while filled or outlined orange cards indicate 5,000 or a fraction."
-	source="Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing"
+	)} people removed, while filled or outlined orange cards indicate {inr(UNIT)} or a fraction."
+	{source}
 >
 	<div bind:clientWidth={width} class="plot">
 		{#each blocks as b, k (b.key)}

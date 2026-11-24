@@ -1,14 +1,14 @@
 <script module>
 	import { CONSTITUENCIES } from '$data/constituencies.js';
 
-	/** Name and district search, forgiving about dots, spaces and case; names that start with it first. @param {string} q */
-	function search(q) {
+	/** Name and district search, forgiving about dots, spaces and case; names that start with it first. @param {string} q @param {typeof CONSTITUENCIES} from */
+	function search(q, from) {
 		const norm = (/** @type {string} */ s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 		const n = norm(q);
-		if (!n) return CONSTITUENCIES;
+		if (!n) return from;
 		const starts = [];
 		const has = [];
-		for (const d of CONSTITUENCIES) {
+		for (const d of from) {
 			const nm = norm(d.name);
 			if (nm.startsWith(n)) starts.push(d);
 			else if (nm.includes(n) || norm(d.district).includes(n)) has.push(d);
@@ -18,12 +18,12 @@
 </script>
 
 <script>
-	// Combobox over the 224 constituencies; focusing selects the shown name so typing replaces it.
+	// Combobox over a state's constituencies (Karnataka's unless `from` is passed); focusing selects
+	// the shown name so typing replaces it.
 	import { X } from '@lucide/svelte';
-	import { BY_AC } from '$data/constituencies.js';
 
-	/** @type {{ ac: number, id?: string }} */
-	let { ac = $bindable(), id = 'constituency-search' } = $props();
+	/** @type {{ ac: number, id?: string, from?: typeof CONSTITUENCIES }} */
+	let { ac = $bindable(), id = 'constituency-search', from = CONSTITUENCIES } = $props();
 
 	let query = $state('');
 	let open = $state(false);
@@ -32,8 +32,8 @@
 	/** @type {HTMLUListElement | undefined} */
 	let list = $state();
 
-	const results = $derived(search(query));
-	const shown = $derived(editing ? query : (BY_AC.get(ac)?.name ?? ''));
+	const results = $derived(search(query, from));
+	const shown = $derived(editing ? query : (from.find((d) => d.ac === ac)?.name ?? ''));
 
 	/** @param {number} next */
 	function pick(next) {
@@ -80,7 +80,9 @@
 		aria-controls="{id}-list"
 		aria-activedescendant={open && results[active] ? `${id}-o${active}` : undefined}
 		aria-label="Your constituency"
-		placeholder="Search for a constituency or district"
+		placeholder={from.some((d) => d.district)
+			? 'Search for a constituency or district'
+			: 'Search for a constituency'}
 		value={shown}
 		onfocus={(e) => {
 			editing = true;

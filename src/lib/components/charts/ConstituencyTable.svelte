@@ -1,18 +1,52 @@
 <script>
 	import { ArrowDown, ArrowUp, X } from '@lucide/svelte';
 	import ChartFrame from './ChartFrame.svelte';
-	import { CONSTITUENCIES as rows } from '$data/constituencies.js';
+	import { CONSTITUENCIES } from '$data/constituencies.js';
 	import { pct, signedPct, heat } from './theme.js';
 
-	const COLS = [
+	/**
+	 * Karnataka's table unless another state's rows are passed. `since` is the roll before the
+	 * revision, as the first column names it.
+	 * @type {{ rows?: import('$data/constituencies.js').Constituency[], title?: string, dek?: string, source?: string, since?: string, sinceShort?: string, search?: boolean }}
+	 */
+	let {
+		rows = CONSTITUENCIES,
+		title = 'The ten constituencies that lost the most voters are all in Bengaluru',
+		dek = 'Breakdown of voter notices and disqualifications by assembly constituencies in Karnataka, January 2025 to October 2026',
+		source = 'Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing',
+		since = 'Jan 2025',
+		search = true,
+		sinceShort = '2025'
+	} = $props();
+
+	const ALL_COLS = [
 		{
 			key: 'change',
-			label: 'Voters since Jan 2025',
-			short: 'Since 2025',
+			label: `Voters since ${since}`,
+			short: `Since ${sinceShort}`,
 			fmt: (v) => signedPct(v, 0),
 			bad: (v) => -v,
 			steps: [5, 15, 25, 35],
 			dir: 1
+		},
+		{
+			key: 'removedPct',
+			label: 'Struck off before the draft roll',
+			short: 'Struck off',
+			fmt: (v) => pct(v, 0),
+			bad: (v) => v,
+			steps: [10, 15, 20, 30],
+			dir: -1
+		},
+		{
+			key: 'backPct',
+			label: 'Of those, back on the final roll',
+			short: 'Back',
+			fmt: (v) => pct(v, 1),
+			bad: () => 0,
+			steps: [1, 2, 3, 4],
+			dir: 1,
+			hideNarrow: true
 		},
 		{
 			key: 'noticePct',
@@ -51,6 +85,9 @@
 			hideNarrow: true
 		}
 	];
+	// a state without notice lists has no notice columns
+	const COLS = ALL_COLS.filter((c) => rows.some((r) => r[c.key] != null));
+	const hasDistricts = rows.some((r) => r.district);
 
 	let sortKey = $state('change');
 	let sortDir = $state(1);
@@ -85,32 +122,32 @@
 	const sortLabel = $derived(COLS.find((c) => c.key === sortKey)?.label ?? '');
 </script>
 
-<ChartFrame
-	title="The ten constituencies that lost the most voters are all in Bengaluru"
-	dek="Breakdown of voter notices and disqualifications by assembly constituencies in Karnataka, January 2025 to October 2026"
-	source="Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing"
->
+<ChartFrame {title} {dek} {source}>
 	{#snippet controls()}
-		<div class="field">
-			<input
-				type="search"
-				placeholder="Search for a constituency or district"
-				bind:value={query}
-				bind:this={field}
-				aria-label="Search constituencies"
-			/>
-			{#if query}
-				<button
-					type="button"
-					class="clear"
-					aria-label="Clear search"
-					onclick={() => {
-						query = '';
-						field?.focus();
-					}}><X size={16} strokeWidth={2.25} aria-hidden="true" /></button
-				>
-			{/if}
-		</div>
+		{#if search}
+			<div class="field">
+				<input
+					type="search"
+					placeholder={hasDistricts
+						? 'Search for a constituency or district'
+						: 'Search for a constituency'}
+					bind:value={query}
+					bind:this={field}
+					aria-label="Search constituencies"
+				/>
+				{#if query}
+					<button
+						type="button"
+						class="clear"
+						aria-label="Clear search"
+						onclick={() => {
+							query = '';
+							field?.focus();
+						}}><X size={16} strokeWidth={2.25} aria-hidden="true" /></button
+					>
+				{/if}
+			</div>
+		{/if}
 	{/snippet}
 	{#snippet legend()}
 		<span class="lbl">Sorted by {sortLabel}</span>
@@ -148,7 +185,11 @@
 					<tr>
 						<td>
 							<span class="nm">{r.name}</span>
-							<span class="sub">{r.district}{r.zeroIneligible ? ' · 0 found ineligible' : ''}</span>
+							<span class="sub"
+								>{r.district === r.name ? '' : r.district}{r.zeroIneligible
+									? ' · 0 found ineligible'
+									: ''}</span
+							>
 						</td>
 						{#each COLS as c (c.key)}
 							{@const v = r[c.key]}

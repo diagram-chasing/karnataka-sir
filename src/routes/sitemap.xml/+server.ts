@@ -1,9 +1,10 @@
 import { SITE_BASE } from '$lib/site';
+import { STATES } from '$data/states/index.js';
 
 export const prerender = true;
 
-// Add every prerendered route the story ships (e.g. '/explore').
-const routes = ['/'];
+// One page per state; the story's own address redirects to the essay.
+const routes = STATES.map((s) => `/${s.slug}`);
 
 export function GET() {
 	const urls = routes

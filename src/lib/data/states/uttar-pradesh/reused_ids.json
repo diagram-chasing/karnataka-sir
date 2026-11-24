@@ -1,0 +1,58 @@
+[
+	{
+		"id": "0093",
+		"pre": "NRY",
+		"why": "absent",
+		"was": "Man, 45",
+		"now": "Man, 29",
+		"constituency": "Powayan"
+	},
+	{
+		"id": "0085",
+		"pre": "NRY",
+		"why": "absent",
+		"was": "Woman, 48",
+		"now": "Woman, 27",
+		"constituency": "Powayan"
+	},
+	{
+		"id": "6412",
+		"pre": "NRY",
+		"why": "shifted",
+		"was": "Man, 63",
+		"now": "Woman, 23",
+		"constituency": "Powayan"
+	},
+	{
+		"id": "0036",
+		"pre": "NRY",
+		"why": "absent",
+		"was": "Woman, 37",
+		"now": "Man, 33",
+		"constituency": "Powayan"
+	},
+	{
+		"id": "0184",
+		"pre": "NRY",
+		"why": "shifted",
+		"was": "Man, 57",
+		"now": "Man, 46",
+		"constituency": "Powayan"
+	},
+	{
+		"id": "1528",
+		"pre": "NRY",
+		"why": "shifted",
+		"was": "Man, 36",
+		"now": "Man, 23",
+		"constituency": "Powayan"
+	},
+	{
+		"id": "6420",
+		"pre": "NRY",
+		"why": "shifted",
+		"was": "Man, 42",
+		"now": "Man, 18",
+		"constituency": "Powayan"
+	}
+]

@@ -3,7 +3,7 @@
 A [Diagram Chasing](https://diagramchasing.fun) data story that tests the
 Election Commission's claim about Karnataka's final voter roll after the 2026
 Special Intensive Revision. It's published at
-[diagramchasing.fun/2026/karnataka-sir](https://diagramchasing.fun/2026/karnataka-sir).
+[diagramchasing.fun/2026/sir/karnataka](https://diagramchasing.fun/2026/sir/karnataka).
 
 ## Before you begin
 
@@ -25,7 +25,7 @@ Special Intensive Revision. It's published at
    ```
 
 3. Open the URL that the dev server prints. Locally, the story is served at the
-   root, without the `/2026/karnataka-sir` path.
+   root, without the `/2026/sir` path.
 
 ## Commands
 
@@ -33,7 +33,7 @@ Special Intensive Revision. It's published at
 | --------------- | --------------------------------------------------------------------- |
 | `pnpm dev`      | Starts the dev server.                                                |
 | `pnpm build`    | Builds the static site into `build/`.                                 |
-| `pnpm preview`  | Serves the build. Open `/2026/karnataka-sir`.                         |
+| `pnpm preview`  | Serves the build. Open `/2026/sir/karnataka`.                        |
 | `pnpm check`    | Type-checks the project with `svelte-check`.                          |
 | `pnpm social`   | Redraws the share images. Requires Google Chrome on this machine.     |
 | `pnpm rss`      | Refreshes the "More from us" posts in the footer.                     |

@@ -6,15 +6,37 @@
 	import { STRIKE_REASONS } from '$data/strike-reasons.js';
 	import { lakh, inr, pct, crisp } from './theme.js';
 
-	const JUNE = 55432314;
-	const KEPT = 44635975;
-	const REASONS = [
-		['shifted', 6545679],
-		['absent', 1900926],
-		['dead', 1639864],
-		['duplicate', 709870]
-	];
-	const DROPPED = JUNE - KEPT;
+	/**
+	 * Karnataka's funnel unless another state's is passed: voters on the roll when the revision
+	 * began, those kept on the draft roll, and those struck off by reason.
+	 * @type {{ data?: { before: number, kept: number, reasons: [string, number][] }, title?: string, dek?: string, source?: string, rollLabel?: string }}
+	 */
+	let {
+		data = {
+			before: 55432314,
+			kept: 44635975,
+			reasons: [
+				['shifted', 6545679],
+				['absent', 1900926],
+				['dead', 1639864],
+				['duplicate', 709870]
+			]
+		},
+		title = 'One in five voters was struck off before the draft roll',
+		dek = 'Voters on the roll in June 2026, and those struck off before the draft roll by reason, Karnataka',
+		source = 'Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing',
+		rollLabel = 'On the roll, 16 June 2026',
+		ofRoll = 'Of June roll'
+	} = $props();
+
+	// svelte-ignore state_referenced_locally
+	const JUNE = data.before;
+	// svelte-ignore state_referenced_locally
+	const KEPT = data.kept;
+	// svelte-ignore state_referenced_locally
+	const REASONS = data.reasons;
+	// the reasons' own total, so the second row always fills its width
+	const DROPPED = REASONS.reduce((s, [, n]) => s + n, 0);
 
 	const seg = ({ row, label, name = label, n, total, x0, kind, value = () => lakh(n) }) => ({
 		row,
@@ -35,7 +57,7 @@
 			row: 0,
 			label: 'Struck off before the draft',
 			name: 'Struck off',
-			n: DROPPED,
+			n: JUNE - KEPT,
 			total: JUNE,
 			x0: KEPT / JUNE,
 			kind: 'off'
@@ -43,12 +65,15 @@
 	];
 	let acc = 0;
 	for (const [key, n] of REASONS) {
-		segs.push(seg({ row: 1, label: STRIKE_REASONS[key], n, total: DROPPED, x0: acc, kind: 'off' }));
+		segs.push(
+			seg({ row: 1, label: STRIKE_REASONS[key] ?? key, n, total: DROPPED, x0: acc, kind: 'off' })
+		);
 		acc += n / DROPPED;
 	}
 	// who came back is ReturnWall's job, straight after this chart
 
-	const HEADERS = ['On the roll, 16 June 2026', 'Struck off, by reason'];
+	// svelte-ignore state_referenced_locally
+	const HEADERS = [rollLabel, 'Struck off, by reason'];
 
 	let width = $state(680);
 	const w = $derived(Math.max(width, 300));
@@ -133,11 +158,7 @@
 		layout.rects.find((s) => px >= s.px && px <= s.px + s.wd && py >= s.barTop && py <= s.barBot);
 </script>
 
-<ChartFrame
-	title="One in five voters was struck off before the draft roll"
-	dek="Voters on the roll in June 2026, and those struck off before the draft roll by reason, Karnataka"
-	source="Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing"
->
+<ChartFrame {title} {dek} {source}>
 	<div bind:clientWidth={width} class="plot">
 		<svg
 			width={w}
@@ -203,9 +224,7 @@
 				rows={[
 					['People', inr(d.n)],
 					['Of this bar', pct(100 * d.share, d.share < 0.01 ? 2 : 1)],
-					...(d.row > 0
-						? [['Of June roll', pct((100 * d.n) / JUNE, d.n / JUNE < 0.01 ? 2 : 1)]]
-						: [])
+					...(d.row > 0 ? [[ofRoll, pct((100 * d.n) / JUNE, d.n / JUNE < 0.01 ? 2 : 1)]] : [])
 				]}
 			/>
 		{/if}

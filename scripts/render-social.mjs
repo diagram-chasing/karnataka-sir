@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import { createServer } from 'vite';
 import puppeteer from 'puppeteer-core';
-import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { BASE_PATH } from '../story.config.js';
-import { FORMATS, STILLS, CHARTS, imagePath } from '../src/lib/social.js';
+import { FORMATS, STILLS, CHARTS, STATE_CARDS, imagePath, kitPath } from '../src/lib/social.js';
 import { gifFrames } from '../src/lib/og-motion.js';
 
 const arg = (name) => {
@@ -15,7 +15,9 @@ const arg = (name) => {
 };
 const only = arg('only');
 const formats = arg('formats');
-const want = (id) => !only || only.includes(id);
+// a state's kit on its own: --kit <slug> shoots only that, unless --only names more
+const kits = arg('kit');
+const want = (id) => (only ? only.includes(id) : !kits);
 
 const CHROME =
 	process.env.CHROME_PATH ||
@@ -38,6 +40,42 @@ for (const c of CHARTS.filter((c) => want(c.id))) {
 	}
 }
 
+// A state's social kit (`--kit uttar-pradesh`): its card and its charts, then one image for each
+// example page it has, in the page's order. These are made for a feed (src/routes/dev/kit), not the
+// page's charts re-shot. What exists is read from the state's data folder; the folder of each format
+// is emptied first, since the numbering shifts whenever an example is added.
+for (const s of STATE_CARDS.filter((s) => kits?.includes(s.slug))) {
+	const dir = `src/lib/data/states/${s.slug}`;
+	const read = (f) =>
+		existsSync(`${dir}/${f}`) ? JSON.parse(readFileSync(`${dir}/${f}`, 'utf8')) : null;
+	const items = [];
+	if (read('funnel.json')) items.push(['card', 'card']);
+	if (read('duplicates.json')?.extraAdded != null) items.push(['duplicates', 'duplicates']);
+	if (read('return.json') || read('return_complete.json')) items.push(['returns', 'returns']);
+	if (read('reused_ids.json')) items.push(['reused', 'reused']);
+	if (read('name_faults.json')) items.push(['names', 'names']);
+	for (const [key, examples] of Object.entries(read('exhibits.json') ?? {})) {
+		// several examples together first, then each on its own
+		if (examples.length > 1) items.push([`g:${key}`, `${key}-grid`]);
+		examples.forEach((_, i) =>
+			items.push([`x:${key}:${i}`, examples.length > 1 ? `${key}-${i + 1}` : key])
+		);
+	}
+	const which = FORMATS.filter((f) => !formats || formats.includes(f.id));
+	for (const f of which)
+		rmSync(dirname(kitPath(s.slug, 1, 'x', f.id)), { recursive: true, force: true });
+	items.forEach(([item, name], i) => {
+		for (const f of which) {
+			jobs.push({
+				path: 'dev/kit',
+				q: `f=${f.id}&s=${s.slug}&i=${encodeURIComponent(item)}`,
+				...f,
+				out: kitPath(s.slug, i + 1, name, f.id)
+			});
+		}
+	});
+}
+
 // --- shoot ----------------------------------------------------------------------------------
 const server = await createServer({ server: { port: 5199, strictPort: false }, logLevel: 'error' });
 await server.listen();
@@ -51,7 +89,9 @@ const browser = await launch();
 async function shoot(page, job) {
 	await page.setViewport({ width: job.w, height: job.h, deviceScaleFactor: job.scale });
 	await page.bringToFront();
-	await page.goto(`${origin}${BASE_PATH}/dev/social?${job.q}`, { waitUntil: 'networkidle0' });
+	await page.goto(`${origin}${BASE_PATH}/${job.path ?? 'dev/social'}?${job.q}`, {
+		waitUntil: 'networkidle0'
+	});
 	await page.waitForSelector('.frame.ready', { timeout: 60_000 });
 	const file = job.out;
 	mkdirSync(dirname(file), { recursive: true });

@@ -1,0 +1,23 @@
+{
+	"before": 154430092,
+	"kept": 125556025,
+	"final": 133984792,
+	"beforeWhen": "October 2025",
+	"reasons": [
+		[
+			"Shifted or absent",
+			21700000
+		],
+		[
+			"dead",
+			4623000
+		],
+		[
+			"duplicate",
+			2547000
+		]
+	],
+	"reasonsFrom": "official",
+	"source": "Office of the Chief Electoral Officer, Uttar Pradesh, press release of 6 January 2026, as quoted by Business Standard: 12,55,56,025 electors out of 15,44,30,092 on the roll of 27.10.2025 submitted enumeration forms.",
+	"sourceUrl": "https://www.business-standard.com/india-news/up-sir-draft-voter-list-out-12-55-crore-of-15-44-crore-voters-retained-126010600689_1.html"
+}

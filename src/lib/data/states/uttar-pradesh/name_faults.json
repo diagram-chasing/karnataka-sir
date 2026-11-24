@@ -1,0 +1,162 @@
+{
+	"roll": "2026-sir-final",
+	"checked": false,
+	"kinds": [
+		{
+			"kind": "A word instead of a house number",
+			"n": 718970,
+			"checked": true,
+			"example": "houseIsWords",
+			"words": [
+				[
+					"विलेज़",
+					"village"
+				],
+				[
+					"Uttar Pradesh",
+					""
+				],
+				[
+					"ग्राम",
+					"village"
+				],
+				[
+					"मकान",
+					"house"
+				]
+			]
+		},
+		{
+			"kind": "A relative's name printed twice",
+			"n": 213720,
+			"checked": true,
+			"lead": true,
+			"example": "relativeRepeats",
+			"words": [
+				[
+					"सिंह सिंह",
+					"Singh Singh"
+				],
+				[
+					"यादव यादव",
+					"Yadav Yadav"
+				],
+				[
+					"प्रसाद प्रसाद",
+					"Prasad Prasad"
+				],
+				[
+					"लाल लाल",
+					"Lal Lal"
+				]
+			]
+		},
+		{
+			"kind": "A voter's name printed twice",
+			"n": 137077,
+			"example": "nameRepeats",
+			"words": [
+				[
+					"देवी देवी",
+					"Devi Devi"
+				],
+				[
+					"कुमार कुमार",
+					"Kumar Kumar"
+				],
+				[
+					"सिंह सिंह",
+					"Singh Singh"
+				],
+				[
+					"खातून खातून",
+					"Khatoon Khatoon"
+				]
+			]
+		},
+		{
+			"kind": "Voters with the same name as their relative",
+			"n": 31721,
+			"example": "sameName",
+			"words": [
+				[
+					"राम कुमार, पिता राम कुमार",
+					"Ram Kumar, father Ram Kumar"
+				],
+				[
+					"सुनीता, पति सुनीता",
+					"Sunita, husband Sunita"
+				]
+			]
+		},
+		{
+			"kind": "Men listed with a husband",
+			"n": 8308,
+			"checked": true,
+			"example": "manWithHusband",
+			"words": [
+				[
+					"पुरुष, पति का नाम",
+					"male, husband's name"
+				]
+			]
+		},
+		{
+			"kind": "A title instead of a relative's name",
+			"n": 5056,
+			"example": "titleOnly",
+			"words": [
+				[
+					"स्व०",
+					"late"
+				],
+				[
+					"श्री",
+					"Mr"
+				],
+				[
+					"श्रीमती",
+					"Mrs"
+				]
+			]
+		},
+		{
+			"kind": "A placeholder instead of a name",
+			"n": 628,
+			"example": "placeholderName",
+			"words": [
+				[
+					"नाम",
+					"name"
+				],
+				[
+					"अज्ञात",
+					"unknown"
+				],
+				[
+					"नहीं",
+					"no"
+				],
+				[
+					"पता नहीं",
+					"not known"
+				]
+			]
+		},
+		{
+			"kind": "Voters whose name begins with 'late'",
+			"n": 17,
+			"example": "lateName",
+			"words": [
+				[
+					"स्व०",
+					"late"
+				],
+				[
+					"स्वर्गीय",
+					"the late"
+				]
+			]
+		}
+	]
+}

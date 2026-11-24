@@ -1,0 +1,402 @@
+[
+	{
+		"constituency": "Sishamau",
+		"ac": 213,
+		"part": 248,
+		"house": "84/83",
+		"voters": 889,
+		"relatives": 608
+	},
+	{
+		"constituency": "Sishamau",
+		"ac": 213,
+		"part": 30,
+		"house": "12/480",
+		"voters": 777,
+		"relatives": 529
+	},
+	{
+		"constituency": "Chhata",
+		"ac": 81,
+		"part": 195,
+		"house": "81",
+		"voters": 742,
+		"relatives": 422
+	},
+	{
+		"constituency": "Sawaijpur",
+		"ac": 154,
+		"part": 355,
+		"house": "1",
+		"voters": 726,
+		"relatives": 472
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 207,
+		"house": "92/11",
+		"voters": 714,
+		"relatives": 491
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 244,
+		"house": "85/65",
+		"voters": 689,
+		"relatives": 523
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 242,
+		"house": "85/64",
+		"voters": 678,
+		"relatives": 486
+	},
+	{
+		"constituency": "Sishamau",
+		"ac": 213,
+		"part": 54,
+		"house": "101/42",
+		"voters": 667,
+		"relatives": 451
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 9,
+		"house": "14/1",
+		"voters": 663,
+		"relatives": 523
+	},
+	{
+		"constituency": "Kalyanpur",
+		"ac": 211,
+		"part": 296,
+		"house": "4/213",
+		"voters": 654,
+		"relatives": 430
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 197,
+		"house": "98/179",
+		"voters": 641,
+		"relatives": 473
+	},
+	{
+		"constituency": "Hasanpur",
+		"ac": 42,
+		"part": 134,
+		"house": "235",
+		"voters": 631,
+		"relatives": 405
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 196,
+		"house": "98/179",
+		"voters": 620,
+		"relatives": 462
+	},
+	{
+		"constituency": "Chandausi",
+		"ac": 31,
+		"part": 41,
+		"house": "208",
+		"voters": 618,
+		"relatives": 461
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 194,
+		"house": "98/179",
+		"voters": 567,
+		"relatives": 399
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 198,
+		"house": "98/179",
+		"voters": 566,
+		"relatives": 449
+	},
+	{
+		"constituency": "Sishamau",
+		"ac": 213,
+		"part": 53,
+		"house": "101/42",
+		"voters": 566,
+		"relatives": 400
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 250,
+		"house": "85/120",
+		"voters": 560,
+		"relatives": 421
+	},
+	{
+		"constituency": "Sikandrabad",
+		"ac": 64,
+		"part": 233,
+		"house": "749",
+		"voters": 555,
+		"relatives": 343
+	},
+	{
+		"constituency": "Bansdih",
+		"ac": 362,
+		"part": 339,
+		"house": "11",
+		"voters": 551,
+		"relatives": 342
+	},
+	{
+		"constituency": "Tanda",
+		"ac": 278,
+		"part": 177,
+		"house": "912",
+		"voters": 544,
+		"relatives": 408
+	},
+	{
+		"constituency": "Sishamau",
+		"ac": 213,
+		"part": 67,
+		"house": "101/314",
+		"voters": 544,
+		"relatives": 364
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 162,
+		"house": "38/24",
+		"voters": 538,
+		"relatives": 414
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 280,
+		"house": "80/20",
+		"voters": 524,
+		"relatives": 367
+	},
+	{
+		"constituency": "Sishamau",
+		"ac": 213,
+		"part": 238,
+		"house": "84/18",
+		"voters": 520,
+		"relatives": 460
+	},
+	{
+		"constituency": "Sawaijpur",
+		"ac": 154,
+		"part": 354,
+		"house": "1",
+		"voters": 518,
+		"relatives": 359
+	},
+	{
+		"constituency": "Kidwai Nagar",
+		"ac": 215,
+		"part": 297,
+		"house": "133/41",
+		"voters": 517,
+		"relatives": 353
+	},
+	{
+		"constituency": "Sishamau",
+		"ac": 213,
+		"part": 74,
+		"house": "96/1",
+		"voters": 517,
+		"relatives": 355
+	},
+	{
+		"constituency": "Govindnagar",
+		"ac": 212,
+		"part": 162,
+		"house": "122/1",
+		"voters": 514,
+		"relatives": 419
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 240,
+		"house": "85/55",
+		"voters": 511,
+		"relatives": 412
+	},
+	{
+		"constituency": "Sishamau",
+		"ac": 213,
+		"part": 48,
+		"house": "101/4",
+		"voters": 503,
+		"relatives": 332
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 225,
+		"house": "89/33",
+		"voters": 502,
+		"relatives": 369
+	},
+	{
+		"constituency": "Sadar",
+		"ac": 189,
+		"part": 85,
+		"house": "172",
+		"voters": 500,
+		"relatives": 348
+	},
+	{
+		"constituency": "Gyanpur",
+		"ac": 393,
+		"part": 232,
+		"house": "46",
+		"voters": 499,
+		"relatives": 387
+	},
+	{
+		"constituency": "Sishamau",
+		"ac": 213,
+		"part": 106,
+		"house": "105/591",
+		"voters": 494,
+		"relatives": 361
+	},
+	{
+		"constituency": "Meerut Cantt.",
+		"ac": 47,
+		"part": 280,
+		"house": "199",
+		"voters": 488,
+		"relatives": 272
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 199,
+		"house": "98/179",
+		"voters": 482,
+		"relatives": 375
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 245,
+		"house": "85/65",
+		"voters": 477,
+		"relatives": 374
+	},
+	{
+		"constituency": "Sishamau",
+		"ac": 213,
+		"part": 239,
+		"house": "84/18",
+		"voters": 467,
+		"relatives": 414
+	},
+	{
+		"constituency": "Sevapuri",
+		"ac": 391,
+		"part": 163,
+		"house": "322",
+		"voters": 464,
+		"relatives": 321
+	},
+	{
+		"constituency": "Arya Nagar",
+		"ac": 214,
+		"part": 193,
+		"house": "98/179",
+		"voters": 462,
+		"relatives": 350
+	},
+	{
+		"constituency": "Faridpur",
+		"ac": 122,
+		"part": 78,
+		"house": "45",
+		"voters": 461,
+		"relatives": 301
+	},
+	{
+		"constituency": "Gauriganj",
+		"ac": 185,
+		"part": 380,
+		"house": "369",
+		"voters": 460,
+		"relatives": 336
+	},
+	{
+		"constituency": "Chauri-Chaura",
+		"ac": 326,
+		"part": 31,
+		"house": "146",
+		"voters": 460,
+		"relatives": 300
+	},
+	{
+		"constituency": "Jagdishpur",
+		"ac": 184,
+		"part": 227,
+		"house": "193",
+		"voters": 458,
+		"relatives": 343
+	},
+	{
+		"constituency": "Manjhanpur",
+		"ac": 252,
+		"part": 253,
+		"house": "1",
+		"voters": 456,
+		"relatives": 313
+	},
+	{
+		"constituency": "Pathardeva",
+		"ac": 338,
+		"part": 228,
+		"house": "1",
+		"voters": 453,
+		"relatives": 337
+	},
+	{
+		"constituency": "Moradabad Nagar",
+		"ac": 28,
+		"part": 226,
+		"house": "318",
+		"voters": 448,
+		"relatives": 363
+	},
+	{
+		"constituency": "Shahabad",
+		"ac": 155,
+		"part": 374,
+		"house": "4",
+		"voters": 446,
+		"relatives": 293
+	},
+	{
+		"constituency": "Barhapur",
+		"ac": 19,
+		"part": 149,
+		"house": "347",
+		"voters": 446,
+		"relatives": 283
+	}
+]

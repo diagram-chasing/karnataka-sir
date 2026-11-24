@@ -1,0 +1,38 @@
+[
+	{
+		"category": "shifted",
+		"listed": 12830168,
+		"dropped": 12393608,
+		"back": 16528,
+		"same_id_live": 3339,
+		"back_same_booth": 16528,
+		"back_by_name": 55099
+	},
+	{
+		"category": "absent",
+		"listed": 8616597,
+		"dropped": 8183326,
+		"back": 27352,
+		"same_id_live": 2547,
+		"back_same_booth": 27352,
+		"back_by_name": 67000
+	},
+	{
+		"category": "dead",
+		"listed": 4468209,
+		"dropped": 4412690,
+		"back": 901,
+		"same_id_live": 553,
+		"back_same_booth": 901,
+		"back_by_name": 2934
+	},
+	{
+		"category": "duplicate",
+		"listed": 2525280,
+		"dropped": 2351368,
+		"back": 2967,
+		"same_id_live": 411,
+		"back_same_booth": 2967,
+		"back_by_name": 7609
+	}
+]

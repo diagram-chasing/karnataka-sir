@@ -1,6 +1,6 @@
 export const story = {
 	title: 'No eligible citizen is left out (?)',
-	slug: 'karnataka-sir',
+	slug: 'sir',
 	year: 2026,
 	description:
 		"The Election Commission says Karnataka's final voter roll leaves out no eligible citizen and includes no ineligible person. The rolls say otherwise.",

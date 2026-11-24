@@ -5,11 +5,22 @@
 	import ConstituencySearch from './ConstituencySearch.svelte';
 	import { hoverTap } from './hoverTap.js';
 	import HoverCard from './HoverCard.svelte';
-	import { STRIPS, headline } from './your-constituency.js';
-	import { CONSTITUENCIES, BY_AC, MIN_NOTICES } from '$data/constituencies.js';
+	import { STRIPS as KA_STRIPS, headline } from './your-constituency.js';
+	import { CONSTITUENCIES as KA, MIN_NOTICES } from '$data/constituencies.js';
 
-	/** @type {{ ac?: number }} */
-	let { ac = $bindable(175) } = $props(); // Bommanahalli, which lost the most voters
+	/**
+	 * Karnataka's unless another state's constituencies and strips are passed.
+	 * @type {{ ac?: number, list?: typeof KA, strips?: typeof KA_STRIPS, dek?: string, note?: string, source?: string }}
+	 */
+	let {
+		ac = $bindable(175), // Bommanahalli, which lost the most voters
+		list: CONSTITUENCIES = KA,
+		strips: STRIPS = KA_STRIPS,
+		dek = 'Four measures of the revision across 224 assembly constituencies, January 2025 to October 2026',
+		note = `Each bar represents a constituency excluding those with fewer ${MIN_NOTICES} notices.`,
+		source = 'Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing'
+	} = $props();
+	const BY_AC = $derived(new Map(CONSTITUENCIES.map((c) => [c.ac, c])));
 
 	const d = $derived(BY_AC.get(ac));
 	const title = $derived(d ? headline(d) : '');
@@ -95,14 +106,9 @@
 		STRIPS.map((s) => [s.label, s.v(c) != null ? s.fmt(/** @type {number} */ (s.v(c))) : '–']);
 </script>
 
-<ChartFrame
-	{title}
-	dek="Four measures of the revision across 224 assembly constituencies, January 2025 to October 2026"
-	note="Each bar represents a constituency excluding those with fewer {MIN_NOTICES} notices."
-	source="Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing"
->
+<ChartFrame {title} {dek} {note} {source}>
 	{#snippet controls()}
-		<ConstituencySearch bind:ac />
+		<ConstituencySearch bind:ac from={CONSTITUENCIES} />
 	{/snippet}
 	<div bind:clientWidth={width} class="plot">
 		<!-- Clicking a bar is a pointer shortcut; the search field is the keyboard way to choose. -->

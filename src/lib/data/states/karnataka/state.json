@@ -1,0 +1,59 @@
+{
+	"slug": "karnataka",
+	"name": "Karnataka",
+	"eciCode": "S10",
+	"constituencies": 224,
+	"lastSirYear": 2002,
+	"finalRollDate": "2026-10-27",
+	"credit": "Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing",
+	"documents": {
+		"lastSir": {
+			"name": "2002 roll",
+			"when": "2002",
+			"by": "Published by CEO Karnataka"
+		},
+		"before": {
+			"name": "January 2025 roll",
+			"when": "January 2025",
+			"by": "Digitized by Mathakaavalu"
+		},
+		"removals": {
+			"name": "Struck-off list",
+			"when": "June to August 2026",
+			"by": "Digitized by Mathakaavalu and Edellu Karnataka"
+		},
+		"notices": {
+			"name": "Notice lists",
+			"when": "August to October 2026",
+			"by": "Digitized by Mathakaavalu and Edellu Karnataka"
+		},
+		"report": {
+			"name": "Summary booklet",
+			"when": "27 October 2026",
+			"by": "Published by CEO Karnataka"
+		},
+		"final": {
+			"name": "Final roll",
+			"when": "27 October 2026",
+			"by": "Digitized by Diagram Chasing"
+		}
+	},
+	"findings": {
+		"duplicatesInBooth": 8992,
+		"idInTwoConstituencies": 461,
+		"crowdedHouses": 381,
+		"noHouseNumber": 2073689,
+		"garbledNames": 1318,
+		"mutualFathers": 296,
+		"struckOff": 10548148,
+		"cameBack": 14892,
+		"unmapped": 3115,
+		"nineMonthRule": 4954,
+		"deadCameBack": 332,
+		"reusedIds": 234
+	},
+	"legacyFiles": {
+		"byAc": "../../by_ac.json",
+		"electorsBefore": "../../electors_2025.json"
+	}
+}

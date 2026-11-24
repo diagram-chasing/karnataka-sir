@@ -1,0 +1,8 @@
+{
+	"_note": "Counts on the 108 constituencies where every removals list is in and no final-roll part is missing from the files.",
+	"constituencies": 108,
+	"struckOff": 5773062,
+	"cameBack": 28725,
+	"deadCameBack": 800,
+	"listed": 5986153
+}

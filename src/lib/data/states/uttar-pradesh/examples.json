@@ -1,0 +1,1310 @@
+[
+	{
+		"finding": "duplicatesInBooth",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 362,
+				"constituency": "Bansdih",
+				"part": 260,
+				"page": 35,
+				"where": "serials 958 to 961, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/362/2026-EROLLGEN-S24-362-SIR-FinalRoll-Revision1-HIN-260-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "duplicatesInBooth",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 133,
+				"constituency": "Tilhar",
+				"part": 334,
+				"page": 27,
+				"where": "serials 689, 690, 691 and 692, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/133/2026-EROLLGEN-S24-133-SIR-FinalRoll-Revision1-HIN-334-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "duplicatesInBooth",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 268,
+				"constituency": "Barabanki",
+				"part": 315,
+				"page": 27,
+				"where": "serials 692, 693, 694 and 695, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/268/2026-EROLLGEN-S24-268-SIR-FinalRoll-Revision1-HIN-315-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "duplicatesInBooth",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 296,
+				"constituency": "Gonda",
+				"part": 120,
+				"page": 20,
+				"where": "serials 504, 505 and 506, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/296/2026-EROLLGEN-S24-296-SIR-FinalRoll-Revision1-HIN-120-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "duplicatesInBooth",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 387,
+				"constituency": "Rohaniya",
+				"part": 268,
+				"page": 33,
+				"where": "serials 888, 889 and 890, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/387/2026-EROLLGEN-S24-387-SIR-FinalRoll-Revision1-HIN-268-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "mutualFathers",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 54,
+				"constituency": "Muradnagar",
+				"part": 81,
+				"page": 13,
+				"where": "serials 303 and 304",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/54/2026-EROLLGEN-S24-54-SIR-FinalRoll-Revision1-HIN-81-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "mutualFathers",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 294,
+				"constituency": "Balrampur",
+				"part": 396,
+				"page": 8,
+				"where": "serials 154 and 155",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/294/2026-EROLLGEN-S24-294-SIR-FinalRoll-Revision1-HIN-396-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "mutualFathers",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 258,
+				"constituency": "Handia",
+				"part": 157,
+				"page": 11,
+				"where": "serials 252 and 253",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/258/2026-EROLLGEN-S24-258-SIR-FinalRoll-Revision1-HIN-157-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "mutualFathers",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 360,
+				"constituency": "Phephana",
+				"part": 199,
+				"page": 27,
+				"where": "serials 747 and 748",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/360/2026-EROLLGEN-S24-360-SIR-FinalRoll-Revision1-HIN-199-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "mutualFathers",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 49,
+				"constituency": "Meerut South",
+				"part": 478,
+				"page": 20,
+				"where": "serials 526 and 527",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/49/2026-EROLLGEN-S24-49-SIR-FinalRoll-Revision1-HIN-478-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "noHouseNumber",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 61,
+				"constituency": "Noida",
+				"part": 704,
+				"page": 5,
+				"where": "serials 61 to 63 onward",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/61/2026-EROLLGEN-S24-61-SIR-FinalRoll-Revision1-HIN-704-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "noHouseNumber",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 98,
+				"constituency": "Shikohabad",
+				"part": 202,
+				"page": 5,
+				"where": "serials 61, 62, 63, 64, 65 and 66",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/98/2026-EROLLGEN-S24-98-SIR-FinalRoll-Revision1-HIN-202-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "noHouseNumber",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 3,
+				"constituency": "Saharanpur Nagar",
+				"part": 51,
+				"page": 5,
+				"where": "serials 61, 62, 63, 64, 65, 66, 67, 68 and 69",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/3/2026-EROLLGEN-S24-3-SIR-FinalRoll-Revision1-HIN-51-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "noHouseNumber",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 4,
+				"constituency": "Saharanpur",
+				"part": 142,
+				"page": 5,
+				"where": "serials 61, 62, 63, 64, 65, 66, 67, 68 and 69",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/4/2026-EROLLGEN-S24-4-SIR-FinalRoll-Revision1-HIN-142-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "noHouseNumber",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 86,
+				"constituency": "Etmadpur",
+				"part": 202,
+				"page": 5,
+				"where": "serials 44, 45, 46, 47, 48, 49, 50, 51 and 52",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/86/2026-EROLLGEN-S24-86-SIR-FinalRoll-Revision1-HIN-202-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "crowdedHouses",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 81,
+				"constituency": "Chhata",
+				"part": 195,
+				"page": 10,
+				"where": "serials 211 to 213 onward",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/81/2026-EROLLGEN-S24-81-SIR-FinalRoll-Revision1-HIN-195-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "crowdedHouses",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 213,
+				"constituency": "Sishamau",
+				"part": 248,
+				"page": 5,
+				"where": "serials 61, 62, 63, 64, 65, 66, 67, 68 and 69",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/213/2026-EROLLGEN-S24-213-SIR-FinalRoll-Revision1-HIN-248-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "crowdedHouses",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 154,
+				"constituency": "Sawaijpur",
+				"part": 355,
+				"page": 5,
+				"where": "serials 61, 62, 63, 64, 65, 66, 67, 68 and 69",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/154/2026-EROLLGEN-S24-154-SIR-FinalRoll-Revision1-HIN-355-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "crowdedHouses",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 211,
+				"constituency": "Kalyanpur",
+				"part": 296,
+				"page": 8,
+				"where": "serials 151, 152, 153, 154, 155, 156, 157, 158 and 159",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/211/2026-EROLLGEN-S24-211-SIR-FinalRoll-Revision1-HIN-296-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "crowdedHouses",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 42,
+				"constituency": "Hasanpur",
+				"part": 134,
+				"page": 5,
+				"where": "serials 61, 62, 63, 64, 65, 66, 67, 68 and 69",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/42/2026-EROLLGEN-S24-42-SIR-FinalRoll-Revision1-HIN-134-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "idInTwoConstituencies",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 175,
+				"constituency": "Lucknow Cantt.",
+				"part": 75,
+				"page": 21,
+				"where": "serial 525, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/175/2026-EROLLGEN-S24-175-SIR-FinalRoll-Revision1-HIN-75-WI.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 387,
+				"constituency": "Rohaniya",
+				"part": 226,
+				"page": 12,
+				"where": "serial 290",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/387/2026-EROLLGEN-S24-387-SIR-FinalRoll-Revision1-HIN-226-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "idInTwoConstituencies",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 142,
+				"constituency": "Lakhimpur",
+				"part": 450,
+				"page": 31,
+				"where": "serial 823, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/142/2026-EROLLGEN-S24-142-SIR-FinalRoll-Revision1-HIN-450-WI.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 147,
+				"constituency": "Hargaon",
+				"part": 351,
+				"page": 3,
+				"where": "serial 22",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/147/2026-EROLLGEN-S24-147-SIR-FinalRoll-Revision1-HIN-351-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "idInTwoConstituencies",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 263,
+				"constituency": "Allahabad South",
+				"part": 72,
+				"page": 14,
+				"where": "serial 353",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/263/2026-EROLLGEN-S24-263-SIR-FinalRoll-Revision1-HIN-72-WI.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 387,
+				"constituency": "Rohaniya",
+				"part": 226,
+				"page": 3,
+				"where": "serial 16",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/387/2026-EROLLGEN-S24-387-SIR-FinalRoll-Revision1-HIN-226-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "idInTwoConstituencies",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 336,
+				"constituency": "Rudrapur",
+				"part": 132,
+				"page": 27,
+				"where": "serial 709, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/336/2026-EROLLGEN-S24-336-SIR-FinalRoll-Revision1-HIN-132-WI.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 337,
+				"constituency": "Deoria",
+				"part": 83,
+				"page": 15,
+				"where": "serial 362",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/337/2026-EROLLGEN-S24-337-SIR-FinalRoll-Revision1-HIN-83-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "idInTwoConstituencies",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 174,
+				"constituency": "Lucknow Central",
+				"part": 4,
+				"page": 19,
+				"where": "serials 476 and 477, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/174/2026-EROLLGEN-S24-174-SIR-FinalRoll-Revision1-HIN-4-WI.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 175,
+				"constituency": "Lucknow Cantt.",
+				"part": 246,
+				"page": 10,
+				"where": "serials 233 and 234",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/175/2026-EROLLGEN-S24-175-SIR-FinalRoll-Revision1-HIN-246-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "idInTwoConstituencies",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 210,
+				"constituency": "Bithoor",
+				"part": 291,
+				"page": 27,
+				"where": "serial 688, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/210/2026-EROLLGEN-S24-210-SIR-FinalRoll-Revision1-HIN-291-WI.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 217,
+				"constituency": "Maharajpur",
+				"part": 37,
+				"page": 11,
+				"where": "serial 259",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/217/2026-EROLLGEN-S24-217-SIR-FinalRoll-Revision1-HIN-37-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "idInTwoConstituencies",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 119,
+				"constituency": "Meerganj",
+				"part": 411,
+				"page": 18,
+				"where": "serial 470",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/119/2026-EROLLGEN-S24-119-SIR-FinalRoll-Revision1-HIN-411-WI.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 124,
+				"constituency": "Bareilly",
+				"part": 228,
+				"page": 33,
+				"where": "serial 917, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/124/2026-EROLLGEN-S24-124-SIR-FinalRoll-Revision1-HIN-228-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "idInTwoConstituencies",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 172,
+				"constituency": "Lucknow North",
+				"part": 133,
+				"page": 9,
+				"where": "serial 184",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/172/2026-EROLLGEN-S24-172-SIR-FinalRoll-Revision1-HIN-133-WI.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 309,
+				"constituency": "Rudhauli",
+				"part": 83,
+				"page": 26,
+				"where": "serial 697, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/309/2026-EROLLGEN-S24-309-SIR-FinalRoll-Revision1-HIN-83-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "deadCameBack",
+		"checked": true,
+		"docs": [
+			{
+				"document": "ASDDR list",
+				"ac": 32,
+				"constituency": "Asmoli",
+				"part": 421,
+				"page": null,
+				"where": "row 48, reason मृत्यु",
+				"url": "https://voters.eci.gov.in/eroll/asd/2025/s24/32/uncollectable_elector_report_ac32_part421.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 32,
+				"constituency": "Asmoli",
+				"part": 421,
+				"page": 32,
+				"where": "serial 875, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/32/2026-EROLLGEN-S24-32-SIR-FinalRoll-Revision1-HIN-421-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "deadCameBack",
+		"checked": true,
+		"docs": [
+			{
+				"document": "ASDDR list",
+				"ac": 365,
+				"constituency": "Shahganj",
+				"part": 246,
+				"page": null,
+				"where": "row 110, reason मृत्यु",
+				"url": "https://voters.eci.gov.in/eroll/asd/2025/s24/365/uncollectable_elector_report_ac365_part246.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 365,
+				"constituency": "Shahganj",
+				"part": 246,
+				"page": 24,
+				"where": "serial 647, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/365/2026-EROLLGEN-S24-365-SIR-FinalRoll-Revision1-HIN-246-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "deadCameBack",
+		"checked": true,
+		"docs": [
+			{
+				"document": "ASDDR list",
+				"ac": 230,
+				"constituency": "Mahoba",
+				"part": 309,
+				"page": null,
+				"where": "row 5, reason मृत्यु",
+				"url": "https://voters.eci.gov.in/eroll/asd/2025/s24/230/uncollectable_elector_report_ac230_part309.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 230,
+				"constituency": "Mahoba",
+				"part": 309,
+				"page": 26,
+				"where": "serial 671, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/230/2026-EROLLGEN-S24-230-SIR-FinalRoll-Revision1-HIN-309-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "deadCameBack",
+		"checked": true,
+		"docs": [
+			{
+				"document": "ASDDR list",
+				"ac": 40,
+				"constituency": "Naugawan Sadat",
+				"part": 141,
+				"page": null,
+				"where": "row 78, reason मृत्यु",
+				"url": "https://voters.eci.gov.in/eroll/asd/2025/s24/40/uncollectable_elector_report_ac40_part141.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 40,
+				"constituency": "Naugawan Sadat",
+				"part": 141,
+				"page": 30,
+				"where": "serial 811, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/40/2026-EROLLGEN-S24-40-SIR-FinalRoll-Revision1-HIN-141-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "deadCameBack",
+		"checked": true,
+		"docs": [
+			{
+				"document": "ASDDR list",
+				"ac": 2,
+				"constituency": "Nakur",
+				"part": 45,
+				"page": null,
+				"where": "row 1, reason मृत्यु",
+				"url": "https://voters.eci.gov.in/eroll/asd/2025/s24/2/uncollectable_elector_report_ac2_part45.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 2,
+				"constituency": "Nakur",
+				"part": 45,
+				"page": 26,
+				"where": "serial 668, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/2/2026-EROLLGEN-S24-2-SIR-FinalRoll-Revision1-HIN-45-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "manWithHusband",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 159,
+				"constituency": "Bilgram-Mallanwan",
+				"part": 47,
+				"page": 23,
+				"where": "serials 581 and 585 (and 588)",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/159/2026-EROLLGEN-S24-159-SIR-FinalRoll-Revision1-HIN-47-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "manWithHusband",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 259,
+				"constituency": "Meja",
+				"part": 261,
+				"page": 11,
+				"where": "serials 258, 268 and 269",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/259/2026-EROLLGEN-S24-259-SIR-FinalRoll-Revision1-HIN-261-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "manWithHusband",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 46,
+				"constituency": "Kithore",
+				"part": 78,
+				"page": 6,
+				"where": "serials 91, 92 and 106",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/46/2026-EROLLGEN-S24-46-SIR-FinalRoll-Revision1-HIN-78-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "manWithHusband",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 376,
+				"constituency": "Jangipur",
+				"part": 82,
+				"page": 21,
+				"where": "serials 547, 555 and 557",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/376/2026-EROLLGEN-S24-376-SIR-FinalRoll-Revision1-HIN-82-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "manWithHusband",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 29,
+				"constituency": "Kundarki",
+				"part": 180,
+				"page": 30,
+				"where": "serials 808 and 821",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/29/2026-EROLLGEN-S24-29-SIR-FinalRoll-Revision1-HIN-180-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "houseIsWords",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 122,
+				"constituency": "Faridpur",
+				"part": 287,
+				"page": 3,
+				"where": "serials 1, 3, 6 and 8",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/122/2026-EROLLGEN-S24-122-SIR-FinalRoll-Revision1-HIN-287-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "houseIsWords",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 62,
+				"constituency": "Dadri",
+				"part": 620,
+				"page": 27,
+				"where": "serials 721, 722, 723, 724, 725, 726, 727, 728 and 729",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/62/2026-EROLLGEN-S24-62-SIR-FinalRoll-Revision1-HIN-620-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "houseIsWords",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 61,
+				"constituency": "Noida",
+				"part": 506,
+				"page": 30,
+				"where": "serials 811, 812, 813, 814, 815, 816, 817, 818 and 819",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/61/2026-EROLLGEN-S24-61-SIR-FinalRoll-Revision1-HIN-506-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "houseIsWords",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 156,
+				"constituency": "Hardoi",
+				"part": 289,
+				"page": 3,
+				"where": "serials 1, 2, 3, 4, 5 and 12",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/156/2026-EROLLGEN-S24-156-SIR-FinalRoll-Revision1-HIN-289-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "houseIsWords",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 207,
+				"constituency": "Sikandra",
+				"part": 24,
+				"page": 3,
+				"where": "serials 2, 3, 4, 6, 7 and 8",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/207/2026-EROLLGEN-S24-207-SIR-FinalRoll-Revision1-HIN-24-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "nameRepeats",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 146,
+				"constituency": "Sitapur",
+				"part": 182,
+				"page": 27,
+				"where": "serials 701 to 706 checked",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/146/2026-EROLLGEN-S24-146-SIR-FinalRoll-Revision1-HIN-182-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "nameRepeats",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 182,
+				"constituency": "Sareni",
+				"part": 185,
+				"page": 31,
+				"where": "serials 821, 822, 823, 824, 825, 826, 827, 828 and 829, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/182/2026-EROLLGEN-S24-182-SIR-FinalRoll-Revision1-HIN-185-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "nameRepeats",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 326,
+				"constituency": "Chauri-Chaura",
+				"part": 344,
+				"page": 31,
+				"where": "serials 812, 813, 814, 815, 816, 817 and 818, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/326/2026-EROLLGEN-S24-326-SIR-FinalRoll-Revision1-HIN-344-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "nameRepeats",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 145,
+				"constituency": "Maholi",
+				"part": 334,
+				"page": 21,
+				"where": "serials 495, 496, 497, 498, 499, 500, 501 and 503, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/145/2026-EROLLGEN-S24-145-SIR-FinalRoll-Revision1-HIN-334-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "nameRepeats",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 398,
+				"constituency": "Chunar",
+				"part": 296,
+				"page": 30,
+				"where": "serials 811, 812, 813, 814, 815, 816, 817, 818 and 819, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/398/2026-EROLLGEN-S24-398-SIR-FinalRoll-Revision1-HIN-296-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "relativeRepeats",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 146,
+				"constituency": "Sitapur",
+				"part": 182,
+				"page": 27,
+				"where": "serials 701 to 706 checked",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/146/2026-EROLLGEN-S24-146-SIR-FinalRoll-Revision1-HIN-182-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "relativeRepeats",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 230,
+				"constituency": "Mahoba",
+				"part": 226,
+				"page": 11,
+				"where": "serials 241, 242, 243, 244, 245, 247 and 249",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/230/2026-EROLLGEN-S24-230-SIR-FinalRoll-Revision1-HIN-226-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "relativeRepeats",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 134,
+				"constituency": "Powayan",
+				"part": 156,
+				"page": 22,
+				"where": "serials 571, 573, 574, 575, 576, 577, 578 and 579",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/134/2026-EROLLGEN-S24-134-SIR-FinalRoll-Revision1-HIN-156-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "relativeRepeats",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 325,
+				"constituency": "Khajani",
+				"part": 381,
+				"page": 27,
+				"where": "serials 721, 722, 723, 724, 725, 726, 727, 728 and 729",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/325/2026-EROLLGEN-S24-325-SIR-FinalRoll-Revision1-HIN-381-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "relativeRepeats",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 225,
+				"constituency": "Garautha",
+				"part": 51,
+				"page": 19,
+				"where": "serials 481, 482, 484, 485, 486, 487, 488 and 489",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/225/2026-EROLLGEN-S24-225-SIR-FinalRoll-Revision1-HIN-51-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "sameName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 287,
+				"constituency": "Payagpur",
+				"part": 413,
+				"page": 18,
+				"where": "serials 427, 428, 429, 430 and 432",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/287/2026-EROLLGEN-S24-287-SIR-FinalRoll-Revision1-HIN-413-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "sameName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 34,
+				"constituency": "Suar",
+				"part": 162,
+				"page": 31,
+				"where": "serials 847, 848, 849, 850, 851, 852, 853, 854 and 855",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/34/2026-EROLLGEN-S24-34-SIR-FinalRoll-Revision1-HIN-162-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "sameName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 38,
+				"constituency": "Milak",
+				"part": 39,
+				"page": 34,
+				"where": "serials 906, 907, 908, 909, 910, 911, 912, 913 and 914, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/38/2026-EROLLGEN-S24-38-SIR-FinalRoll-Revision1-HIN-39-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "sameName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 96,
+				"constituency": "Jasrana",
+				"part": 213,
+				"page": 25,
+				"where": "serials 663, 664, 665, 666, 668 and 669",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/96/2026-EROLLGEN-S24-96-SIR-FinalRoll-Revision1-HIN-213-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "sameName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 183,
+				"constituency": "Unchahar",
+				"part": 60,
+				"page": 38,
+				"where": "serials 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040 and 1041, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/183/2026-EROLLGEN-S24-183-SIR-FinalRoll-Revision1-HIN-60-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "titleOnly",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 316,
+				"constituency": "Nautanwa",
+				"part": 194,
+				"page": 4,
+				"where": "serials 42, 43, 45 and 46",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/316/2026-EROLLGEN-S24-316-SIR-FinalRoll-Revision1-HIN-194-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "titleOnly",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 346,
+				"constituency": "Mubarakpur",
+				"part": 161,
+				"page": 27,
+				"where": "serials 730, 731, 732, 733, 735 and 738",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/346/2026-EROLLGEN-S24-346-SIR-FinalRoll-Revision1-HIN-161-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "titleOnly",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 401,
+				"constituency": "Robertsganj",
+				"part": 76,
+				"page": 4,
+				"where": "serials 37, 38, 40, 41, 43 and 44",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/401/2026-EROLLGEN-S24-401-SIR-FinalRoll-Revision1-HIN-76-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "titleOnly",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 252,
+				"constituency": "Manjhanpur",
+				"part": 241,
+				"page": 7,
+				"where": "serials 121, 122, 124, 126 and 130",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/252/2026-EROLLGEN-S24-252-SIR-FinalRoll-Revision1-HIN-241-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "titleOnly",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 386,
+				"constituency": "Shivpur",
+				"part": 183,
+				"page": 29,
+				"where": "serials 782, 783, 784, 791 and 792",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/386/2026-EROLLGEN-S24-386-SIR-FinalRoll-Revision1-HIN-183-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "placeholderName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 390,
+				"constituency": "Varanasi Cantt.",
+				"part": 148,
+				"page": 16,
+				"where": "serials 415, 416, 417 and 418 (also 393)",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/390/2026-EROLLGEN-S24-390-SIR-FinalRoll-Revision1-HIN-148-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "placeholderName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 175,
+				"constituency": "Lucknow Cantt.",
+				"part": 26,
+				"page": 13,
+				"where": "serials 322, 323 and 324",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/175/2026-EROLLGEN-S24-175-SIR-FinalRoll-Revision1-HIN-26-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "placeholderName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 380,
+				"constituency": "Mughalsarai",
+				"part": 328,
+				"page": 22,
+				"where": "serials 583, 588 and 595",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/380/2026-EROLLGEN-S24-380-SIR-FinalRoll-Revision1-HIN-328-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "placeholderName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 55,
+				"constituency": "Sahibabad",
+				"part": 51,
+				"page": 15,
+				"where": "serials 366 and 373",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/55/2026-EROLLGEN-S24-55-SIR-FinalRoll-Revision1-HIN-51-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "placeholderName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 7,
+				"constituency": "Gangoh",
+				"part": 163,
+				"page": 17,
+				"where": "serials 433 and 436",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/7/2026-EROLLGEN-S24-7-SIR-FinalRoll-Revision1-HIN-163-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "lateName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 189,
+				"constituency": "Sadar",
+				"part": 33,
+				"page": 19,
+				"where": "serial 494",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/189/2026-EROLLGEN-S24-189-SIR-FinalRoll-Revision1-HIN-33-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "lateName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 248,
+				"constituency": "Pratapgarh",
+				"part": 211,
+				"page": 9,
+				"where": "serial 185",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/248/2026-EROLLGEN-S24-248-SIR-FinalRoll-Revision1-HIN-211-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "lateName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 388,
+				"constituency": "Varanasi North",
+				"part": 268,
+				"page": 14,
+				"where": "serial 358",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/388/2026-EROLLGEN-S24-388-SIR-FinalRoll-Revision1-HIN-268-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "lateName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 380,
+				"constituency": "Mughalsarai",
+				"part": 2,
+				"page": 8,
+				"where": "serial 152",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/380/2026-EROLLGEN-S24-380-SIR-FinalRoll-Revision1-HIN-2-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "lateName",
+		"checked": true,
+		"docs": [
+			{
+				"document": "Final roll",
+				"ac": 215,
+				"constituency": "Kidwai Nagar",
+				"part": 11,
+				"page": 20,
+				"where": "serial 526",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/215/2026-EROLLGEN-S24-215-SIR-FinalRoll-Revision1-HIN-11-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "reusedIds",
+		"checked": true,
+		"docs": [
+			{
+				"document": "ASDDR list",
+				"ac": 134,
+				"constituency": "Powayan",
+				"part": 412,
+				"page": null,
+				"where": "row 306",
+				"url": "https://voters.eci.gov.in/eroll/asd/2025/s24/134/uncollectable_elector_report_ac134_part412.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 134,
+				"constituency": "Powayan",
+				"part": 410,
+				"page": 25,
+				"where": "serial 664, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/134/2026-EROLLGEN-S24-134-SIR-FinalRoll-Revision1-HIN-410-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "reusedIds",
+		"checked": true,
+		"docs": [
+			{
+				"document": "ASDDR list",
+				"ac": 134,
+				"constituency": "Powayan",
+				"part": 412,
+				"page": null,
+				"where": "row 304",
+				"url": "https://voters.eci.gov.in/eroll/asd/2025/s24/134/uncollectable_elector_report_ac134_part412.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 134,
+				"constituency": "Powayan",
+				"part": 214,
+				"page": 30,
+				"where": "serial 798, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/134/2026-EROLLGEN-S24-134-SIR-FinalRoll-Revision1-HIN-214-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "reusedIds",
+		"checked": true,
+		"docs": [
+			{
+				"document": "ASDDR list",
+				"ac": 134,
+				"constituency": "Powayan",
+				"part": 448,
+				"page": null,
+				"where": "row 55",
+				"url": "https://voters.eci.gov.in/eroll/asd/2025/s24/134/uncollectable_elector_report_ac134_part448.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 134,
+				"constituency": "Powayan",
+				"part": 216,
+				"page": 28,
+				"where": "serial 743, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/134/2026-EROLLGEN-S24-134-SIR-FinalRoll-Revision1-HIN-216-WI.pdf"
+			}
+		]
+	},
+	{
+		"finding": "reusedIds",
+		"checked": true,
+		"docs": [
+			{
+				"document": "ASDDR list",
+				"ac": 134,
+				"constituency": "Powayan",
+				"part": 412,
+				"page": null,
+				"where": "row 342",
+				"url": "https://voters.eci.gov.in/eroll/asd/2025/s24/134/uncollectable_elector_report_ac134_part412.pdf"
+			},
+			{
+				"document": "Final roll",
+				"ac": 134,
+				"constituency": "Powayan",
+				"part": 214,
+				"page": 29,
+				"where": "serial 797, list of additions",
+				"url": "https://voters.eci.gov.in/eroll/2026/s24/sir-finalroll/134/2026-EROLLGEN-S24-134-SIR-FinalRoll-Revision1-HIN-214-WI.pdf"
+			}
+		]
+	}
+]

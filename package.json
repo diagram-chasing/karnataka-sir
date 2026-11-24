@@ -17,7 +17,8 @@
 		"social": "node scripts/render-social.mjs",
 		"clip": "node scripts/render-clip.mjs",
 		"clip:films": "node scripts/render-clip.mjs --route clip-films --crf 23",
-		"receipts": "node scripts/archive-sources.mjs"
+		"receipts": "node scripts/archive-sources.mjs",
+		"states": "node scripts/check-states.mjs"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",

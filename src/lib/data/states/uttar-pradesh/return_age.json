@@ -1,0 +1,37 @@
+[
+	{
+		"band": "18-29",
+		"dropped": 4313776,
+		"back": 17991,
+		"back_same_booth": 17991,
+		"back_by_name": 58383
+	},
+	{
+		"band": "30-44",
+		"dropped": 10772264,
+		"back": 19915,
+		"back_same_booth": 19915,
+		"back_by_name": 52256
+	},
+	{
+		"band": "45-59",
+		"dropped": 6638660,
+		"back": 6904,
+		"back_same_booth": 6904,
+		"back_by_name": 16056
+	},
+	{
+		"band": "60-74",
+		"dropped": 3853465,
+		"back": 2454,
+		"back_same_booth": 2454,
+		"back_by_name": 5081
+	},
+	{
+		"band": "75+",
+		"dropped": 1761700,
+		"back": 484,
+		"back_same_booth": 484,
+		"back_by_name": 866
+	}
+]

@@ -1,7 +1,22 @@
 <script>
 	import ChartFrame from './ChartFrame.svelte';
-	import rows from '$data/reused_ids.json';
+	import karnataka from '$data/reused_ids.json';
 
+	/**
+	 * Karnataka's (all in Dasarahalli) unless another state's rows are passed. `before` is the roll
+	 * the earlier holder was on, as it reads in the column heading.
+	 * @type {{ data?: { id: string, pre: string, why: string, was: string, now: string }[], title?: string, dek?: string, source?: string, before?: string, after?: string }}
+	 */
+	let {
+		data: rows = karnataka,
+		title = '',
+		dek = 'Voter IDs held by two different people, by how the earlier holder was struck off, Dasarahalli constituency, January 2025 roll and final roll of October 2026',
+		source = 'Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing',
+		before = 'January 2025',
+		after = 'October 2026'
+	} = $props();
+
+	// svelte-ignore state_referenced_locally
 	const REASONS = [
 		{ key: 'dead', label: 'Dead' },
 		{ key: 'absent', label: 'Absent' },
@@ -12,7 +27,7 @@
 		.filter((r) => r.n);
 	const FIRST = 10;
 
-	let active = $state('dead');
+	let active = $state(REASONS[0]?.key ?? 'dead');
 	let showAll = $state(false);
 	const group = $derived(rows.filter((d) => d.why === active));
 	const visible = $derived(showAll ? group : group.slice(0, FIRST));
@@ -25,9 +40,10 @@
 </script>
 
 <ChartFrame
-	title="{rows.length} new voters in Dasarahalli were given a voter ID that belonged to someone else"
-	dek="Voter IDs held by two different people, by how the earlier holder was struck off, Dasarahalli constituency, January 2025 roll and final roll of October 2026"
-	source="Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing"
+	title={title ||
+		`${rows.length} new voters in Dasarahalli were given a voter ID that belonged to someone else`}
+	{dek}
+	{source}
 >
 	{#snippet controls()}
 		<div class="seg" role="group" aria-label="How the earlier holder was struck off">
@@ -42,8 +58,8 @@
 		<thead>
 			<tr>
 				<th>Voter ID</th>
-				<th>Marked {reason.label.toLowerCase()}, on the roll in January 2025</th>
-				<th>New voter, added by October 2026</th>
+				<th>Marked {reason.label.toLowerCase()}, on the roll in {before}</th>
+				<th>New voter, added by {after}</th>
 			</tr>
 		</thead>
 		<tbody>

@@ -41,7 +41,7 @@ def ring(coords):
     return s
 
 
-for name in ['karnataka-ac', 'karnataka-state', 'bengaluru-ac']:
+for name in ['karnataka-ac', 'karnataka-state', 'bengaluru-ac', 'uttar-pradesh-ac', 'uttar-pradesh-state']:
     src = json.loads((HERE / f'{name}.json').read_text())
     out = []
     for f in src['features']:

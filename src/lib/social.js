@@ -49,6 +49,9 @@ export const FORMATS = [
  * Stills shot once, not per format: the link preview and the project-card thumbnails. The
  * thumbnail's title sits inside the middle 4:3, which is all the project grid shows.
  */
+/** States with a page of their own: each gets the link preview with its name under the title. */
+export const STATE_CARDS = [{ slug: 'uttar-pradesh', name: 'Uttar Pradesh' }];
+
 export const STILLS = [
 	{
 		id: 'og',
@@ -75,7 +78,17 @@ export const STILLS = [
 		out: `${SOCIAL_DIR}/thumbnail-plain.jpg`,
 		cover: { cell: 46, orange: 5 },
 		plain: true
-	}
+	},
+	...STATE_CARDS.map((s) => ({
+		id: `og-${s.slug}`,
+		kind: 'og',
+		state: s.name,
+		w: 1200,
+		h: 630,
+		scale: 1,
+		out: `static/og/${s.slug}.jpg`,
+		cover: { cell: 46, orange: 4 }
+	}))
 ];
 
 /** One image per entry and format, in story order. `cover` is the title card; the rest are charts. */
@@ -94,6 +107,10 @@ export const CHARTS = [
 	{ id: 'scatter', label: 'Notices and strike-offs' },
 	{ id: 'table', label: 'Constituency table' }
 ];
+
+/** A state's kit goes in social/{slug}/{format}/{nn}-{item}.jpg, numbered in page order. */
+export const kitPath = (slug, n, item, format) =>
+	`${SOCIAL_DIR}/${slug}/${format}/${String(n).padStart(2, '0')}-${item}.jpg`;
 
 /** social/{format}/{nn}-{chart}.jpg, numbered in story order so a folder is a ready carousel. */
 export const imagePath = (chart, format) => {

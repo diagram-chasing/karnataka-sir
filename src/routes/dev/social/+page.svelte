@@ -18,6 +18,7 @@
 	import ReusedIds from '$charts/ReusedIds.svelte';
 	import RollFunnel from '$charts/RollFunnel.svelte';
 	import YourConstituency from '$charts/YourConstituency.svelte';
+	import StateShare from '$lib/components/StateShare.svelte';
 
 	let { data } = $props();
 
@@ -53,12 +54,18 @@
 		safeY?: number;
 		wide?: boolean;
 		plain?: boolean;
+		kind?: string;
+		state?: string;
 		cover: { cell: number; orange: number };
 	};
 	const still = STILLS.find((s) => s.id === data.c);
 	const F: Frame | undefined = still ?? FORMATS.find((f) => f.id === data.f);
 	if (!F) error(404, `No share format "${data.f}"`);
-	const chart = COMPONENTS[data.c];
+	// a state's kit: c=state:<slug>:<item>, where the item is its card, its return rates or an example
+	const [, kitSlug, ...kitItem] = data.c.startsWith('state:') ? data.c.split(':') : [];
+	const chart: Chart | undefined = kitSlug
+		? { C: StateShare, props: { slug: kitSlug, item: kitItem.join(':') } }
+		: COMPONENTS[data.c];
 	const isCover = !!still || data.c === 'cover';
 	if (!isCover && !chart) error(404, `No share image for "${data.c}"`);
 	const plain = !!F.plain;
@@ -206,7 +213,7 @@
 <svelte:head><title>Share image · {data.c}</title></svelte:head>
 
 <div
-	class={['frame', `f-${F.id}`, { ready, wide: F.wide, cover: isCover }]}
+	class={['frame', `f-${F.kind ?? F.id}`, { ready, wide: F.wide, cover: isCover }]}
 	style:width="{F.w}px"
 	style:height="{F.h}px"
 	style:--safe-y="{safeY}px"
@@ -226,6 +233,7 @@
 				<div class="type" bind:clientWidth={typeW} bind:clientHeight={typeH}>
 					<img class="logo" src={logoSrc} alt="Diagram Chasing" />
 					<h1>{claimTop}<br />{claimEnd} <span class="q">(?)</span></h1>
+					{#if F.state}<p class="state">{F.state}</p>{/if}
 				</div>
 			</div>
 		{/if}
@@ -319,6 +327,15 @@
 	}
 	.cover .q {
 		color: var(--story-orange);
+	}
+	/* a state's own card: its name under the title, in the title's face at half the size */
+	.cover .state {
+		margin: 22px 0 0;
+		font-family: var(--font-heading);
+		font-weight: 700;
+		font-size: 38px;
+		line-height: 1;
+		letter-spacing: -0.015em;
 	}
 	.f-og h1,
 	.f-thumb h1 {

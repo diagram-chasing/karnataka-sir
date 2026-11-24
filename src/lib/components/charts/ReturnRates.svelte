@@ -3,10 +3,24 @@
 	import ChartFrame from './ChartFrame.svelte';
 	import { hoverTap } from './hoverTap.js';
 	import HoverCard from './HoverCard.svelte';
-	import byReason from '$data/asddo_return.json';
-	import byAge from '$data/asddo_return_age.json';
+	import krReason from '$data/asddo_return.json';
+	import krAge from '$data/asddo_return_age.json';
 	import { inr, pct, step } from './theme.js';
 	import { STRIKE_REASONS } from '$data/strike-reasons.js';
+
+	/**
+	 * Karnataka's unless another state's returns are passed.
+	 * @type {{ byReason?: { category: string, dropped: number, back: number }[], byAge?: { band: string, dropped: number, back: number }[], flat?: boolean, title?: string, dek?: string, note?: string, source?: string }}
+	 */
+	let {
+		byReason = krReason,
+		byAge = krAge,
+		flat = false,
+		title = 'Older voters and those marked dead were the least likely to come back',
+		dek = 'Share of voters struck off before the draft roll who are back on the final roll, by reason and age, Karnataka, October 2026',
+		note = "A voter counts as back if someone with the same name, relative's name and age was added in the same constituency. This finds about 85% of them. Age is from the January 2025 roll.",
+		source = 'Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing'
+	} = $props();
 
 	const SHORT = {
 		'Permanently shifted': 'Shifted',
@@ -18,6 +32,7 @@
 		back: d.back,
 		rate: (100 * d.back) / d.dropped
 	});
+	// svelte-ignore state_referenced_locally
 	const panels = [
 		{
 			title: 'By reason',
@@ -31,7 +46,8 @@
 	const max = Math.max(...panels.flatMap((p) => p.rows.map((r) => r.rate)));
 	const STEPS = [0.05, 0.1, 0.2, 0.3];
 	const RAMP = ['var(--d-w4)', 'var(--d-w3)', 'var(--d-w2)', 'var(--d-w1)', 'var(--d-w0)'];
-	const fill = (r) => RAMP[step(r.rate, STEPS)];
+	// `flat` draws every bar in one tint: length alone carries the rate
+	const fill = (r) => (flat ? 'var(--d-w0)' : RAMP[step(r.rate, STEPS)]);
 
 	let width = $state(680);
 	const w = $derived(Math.max(width, 300));
@@ -68,12 +84,7 @@
 		layout.panels.flatMap((p) => p.rows).find((r) => py >= r.y && py <= r.y + BAR);
 </script>
 
-<ChartFrame
-	title="Older voters and those marked dead were the least likely to come back"
-	dek="Share of voters struck off before the draft roll who are back on the final roll, by reason and age, Karnataka, October 2026"
-	note="A voter counts as back if someone with the same name, relative's name and age was added in the same constituency. This finds about 85% of them. Age is from the January 2025 roll."
-	source="Sources: CEO Karnataka; Mathakaavalu; Diagram Chasing"
->
+<ChartFrame {title} {dek} {note} {source}>
 	<div bind:clientWidth={width} class="plot">
 		<svg
 			width={w}

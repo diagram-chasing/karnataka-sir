@@ -3,18 +3,39 @@
 	import { hoverTap } from './hoverTap.js';
 	import HoverCard from './HoverCard.svelte';
 	import VoterCard, { CARD_W, CARD_H } from '$lib/components/VoterCard.svelte';
-	import dup from '$data/duplicates.json';
+	import karnataka from '$data/duplicates.json';
 	import { inr, pct } from './theme.js';
 
-	const UNIT = 200;
+	/**
+	 * Karnataka's unless another state's counts are passed. `extraAdded` is how many of the
+	 * duplicates on the final roll were added in the revision; `unit` is duplicates per card.
+	 * @type {{ data?: { extra: number, extraAdded: number, deleted: number }, unit?: number, title?: string, dek?: string, source?: string }}
+	 */
+	let {
+		data: dup = karnataka,
+		unit: UNIT = 200,
+		title = '',
+		dek = 'Duplicate entries removed and added during the revision, Karnataka, final roll, October 2026',
+		source = 'Sources: CEO Karnataka; Diagram Chasing'
+	} = $props();
 	// Duplicates counted as the prose counts them: every entry for a person after their first, so the
 	// person's own entry is never counted. dup.extraAdded of them were added in the revision.
+	// svelte-ignore state_referenced_locally
 	const blocks = [
 		{ key: 'deleted', card: 'card-gone', label: 'Removed as duplicates', n: dup.deleted },
 		{ key: 'added', card: 'card-orange', label: 'Added during the revision', n: dup.extraAdded },
 		{ key: 'older', card: 'card-grey', label: 'Already on the roll', n: dup.extra - dup.extraAdded }
 	];
+	// svelte-ignore state_referenced_locally
 	const ratio = Math.round(dup.extraAdded / dup.deleted);
+	// the essay's headline where the revision added several for each one it removed; otherwise the
+	// two counts as they are
+	// svelte-ignore state_referenced_locally
+	const headline =
+		title ||
+		(ratio >= 2
+			? `The revision added ${ratio} duplicates for every one it removed`
+			: `While the revision struck off ${inr(dup.deleted)} cards as repeats, it added at least ${inr(dup.extraAdded)} new duplicates`);
 
 	let width = $state(680);
 	const w = $derived(Math.max(width, 300));
@@ -64,10 +85,10 @@
 </script>
 
 <ChartFrame
-	title="The revision added {ratio} duplicates for every one it removed"
-	dek="Duplicate entries removed and added during the revision, Karnataka, final roll, October 2026"
+	title={headline}
+	{dek}
 	note="Each card is {UNIT} duplicates. A duplicate is a second or later entry for the same person in one booth: same name, relative's name, age and sex, and either the same house number or an entry added in the revision."
-	source="Sources: CEO Karnataka; Diagram Chasing"
+	{source}
 >
 	<div bind:clientWidth={width} class="plot">
 		<svg
