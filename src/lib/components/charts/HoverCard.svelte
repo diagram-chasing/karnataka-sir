@@ -88,14 +88,16 @@
 		border: 0;
 		text-align: right;
 		white-space: nowrap;
-		vertical-align: baseline;
+		vertical-align: bottom;
 		background: transparent;
 		color: var(--c-ink, #111);
 	}
+	/* The label wraps inside the card's max-width; the value beside it never does. */
 	.card tr > :first-child {
 		text-align: left;
 		padding-left: 0;
-		white-space: nowrap;
+		white-space: normal;
+		text-wrap: balance;
 		padding-right: 4px;
 	}
 	.card td {
