@@ -150,7 +150,7 @@
 			: ''
 	);
 	const BACK =
-		"A voter counts as 'added back' if they were added to the final roll in the same booth as the list that removed them, under a new voter ID, with the same name and relative and an age within a year. The lists name 2.73 crore of the 2.89 crore officially struck off: those found by voter ID on the 2024 roll.";
+		"A voter counts as 'added back' if they were added to the final roll in the same booth as the list that removed them, under a new voter ID, with the same name and relative and an age within a year.";
 	const struckBase = $derived(
 		[
 			onSubset
