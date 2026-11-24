@@ -75,33 +75,6 @@
 			]
 		},
 		{
-			"kind": "Voters with the same name as their relative",
-			"n": 31721,
-			"example": "sameName",
-			"words": [
-				[
-					"राम कुमार, पिता राम कुमार",
-					"Ram Kumar, father Ram Kumar"
-				],
-				[
-					"सुनीता, पति सुनीता",
-					"Sunita, husband Sunita"
-				]
-			]
-		},
-		{
-			"kind": "Men listed with a husband",
-			"n": 8308,
-			"checked": true,
-			"example": "manWithHusband",
-			"words": [
-				[
-					"पुरुष, पति का नाम",
-					"male, husband's name"
-				]
-			]
-		},
-		{
 			"kind": "A title instead of a relative's name",
 			"n": 5056,
 			"example": "titleOnly",

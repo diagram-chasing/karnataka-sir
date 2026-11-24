@@ -26,5 +26,5 @@ export const worded = (text, state) =>
  */
 export const labelOf = (f, state) =>
 	f.key === 'crowdedHouses'
-		? 'House numbers with 100+ voters across 50+ distinct families'
+		? 'House numbers with at least 100 voters from at least 50 families'
 		: worded(f.label, state);

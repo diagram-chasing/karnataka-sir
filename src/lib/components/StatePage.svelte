@@ -425,7 +425,7 @@
 		<!-- the table and its button are one part, so the visuals' gap falls above them only -->
 		<div class="crowd-part">
 			<table class="crowd" class:all={crowdAll}>
-				<caption>House numbers with the most voters</caption>
+				<caption>The 10 house numbers with the most voters</caption>
 				<thead>
 					<tr>
 						<th>Constituency, part</th>

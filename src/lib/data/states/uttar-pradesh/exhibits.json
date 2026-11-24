@@ -123,23 +123,6 @@
 			"up-x-dead-came-back-5b"
 		]
 	],
-	"manWithHusband": [
-		[
-			"up-07-husband"
-		],
-		[
-			"up-x-man-with-husband-2"
-		],
-		[
-			"up-x-man-with-husband-3"
-		],
-		[
-			"up-x-man-with-husband-4"
-		],
-		[
-			"up-x-man-with-husband-5"
-		]
-	],
 	"houseIsWords": [
 		[
 			"up-08-house-words"
@@ -189,23 +172,6 @@
 		],
 		[
 			"up-x-relative-repeats-5"
-		]
-	],
-	"sameName": [
-		[
-			"up-10-same-name"
-		],
-		[
-			"up-x-same-name-2"
-		],
-		[
-			"up-x-same-name-3"
-		],
-		[
-			"up-x-same-name-4"
-		],
-		[
-			"up-x-same-name-5"
 		]
 	],
 	"titleOnly": [
