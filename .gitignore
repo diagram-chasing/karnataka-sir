@@ -36,3 +36,9 @@ dev/
 *.mp4
 *.mov
 *.m4a
+
+# The state social kits and what they are made from: large, unapproved drafts, and the card
+# data holds voters' names as text. Kept on disk only.
+/social/uttar-pradesh/
+/social/exhibits/
+/social/dc-logo-white.png
