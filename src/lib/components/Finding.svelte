@@ -14,17 +14,19 @@
 
 	/**
 	 * @typedef {{ document: string, constituency: string, part: number, page: number | null, where?: string, url: string }} Cite
-	 * @type {{ n: number, what: string, examples?: { id: string, doc?: Cite }[][], cites?: import('svelte').Snippet, extra?: import('svelte').Snippet, key?: string, focus?: boolean }}
+	 * @type {{ n?: number, what: string, examples?: { id: string, doc?: Cite }[][], cites?: import('svelte').Snippet, extra?: import('svelte').Snippet, key?: string, focus?: boolean, fig?: string }}
 	 */
 	// `key` names the finding for the page's reading line; `focus` is set on the one being read
-	let { n, what, examples = [], cites, extra, key = '', focus = false } = $props();
+	// `fig` is a figure that is not a count of voters, as it should read: a rate or a ratio
+	let { n = 0, what, examples = [], cites, extra, key = '', focus = false, fig = '' } = $props();
 
 	let at = $state(0);
 	const count = $derived(examples.length);
 	const step = (/** @type {number} */ d) => (at = (at + d + count) % count);
 	const figure = $derived.by(() => {
-		const [fig, unit] = lakh(n).split(/[  ]/);
-		return { fig, unit: unit ?? '' };
+		if (fig) return { fig, unit: '' };
+		const [f, unit] = lakh(n).split(/[  ]/);
+		return { fig: f, unit: unit ?? '' };
 	});
 	const side = $derived(count > 0 || !!extra);
 

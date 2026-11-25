@@ -22,7 +22,8 @@ const chartFiles = /** @type {Record<string, any>} */ (
 			'./*/examples.json',
 			'./*/exhibits.json',
 			'./*/findings_complete.json',
-			'./*/name_faults.json'
+			'./*/name_faults.json',
+			'./*/demographics.json'
 		],
 		{ eager: true, import: 'default' }
 	)
@@ -53,7 +54,9 @@ export function chartsOf(slug) {
 		/** the removal counts on the complete constituencies only, for use until the state's own are in */
 		findingsSubset: f('findings_complete'),
 		/** the examples drawn for each count: a list of examples, each one page or a pair read together */
-		exhibits: /** @type {Record<string, string[][]>} */ (f('exhibits') ?? {})
+		exhibits: /** @type {Record<string, string[][]>} */ (f('exhibits') ?? {}),
+		/** age, reason, transgender and disqualification demographic breakdowns */
+		demographics: f('demographics')
 	};
 }
 

@@ -8,6 +8,14 @@
 	import ReturnRates from '$charts/ReturnRates.svelte';
 	import ReturnWall from '$charts/ReturnWall.svelte';
 	import RollFunnel from '$charts/RollFunnel.svelte';
+	import AgeGenderGap from '$charts/AgeGenderGap.svelte';
+	import GenderReasons from '$charts/GenderReasons.svelte';
+	import SexRatioShift from '$charts/SexRatioShift.svelte';
+	import RemovalsVsAdditions from '$charts/RemovalsVsAdditions.svelte';
+	import LossVsMargin from '$charts/LossVsMargin.svelte';
+	import TransgenderScatter from '$charts/TransgenderScatter.svelte';
+	import DisqualificationSpread from '$charts/DisqualificationSpread.svelte';
+	import DisqualifiedGender from '$charts/DisqualifiedGender.svelte';
 	import NameFaults from '$charts/NameFaults.svelte';
 	import DuplicateCards from '$charts/DuplicateCards.svelte';
 	import ReusedIds from '$charts/ReusedIds.svelte';
@@ -128,6 +136,94 @@
 			};
 		});
 
+	// Who was removed, by age and gender: each chart's finding as a figure and a sentence, read off
+	// the same data the chart draws, so the two cannot disagree. A chart's own headline is the
+	// sentence beside it, and its note keeps only what neither says.
+	const demo = $derived(charts.demographics ?? {});
+	const demoItems = $derived.by(() => {
+		const pc = (/** @type {number} */ v, d = 0) => pct(v, d);
+		const out = [];
+		const ag = demo.ageGender;
+		if (ag) {
+			const peak = ag.bands.reduce((/** @type {any} */ a, /** @type {any} */ b) =>
+				b.f_pct / b.m_pct > a.f_pct / a.m_pct ? b : a
+			);
+			out.push({
+				key: 'ageGender',
+				fig: `${(peak.f_pct / peak.m_pct).toFixed(1)}×`,
+				what: `Women aged ${peak.band} were removed at ${(peak.f_pct / peak.m_pct).toFixed(1)} times the rate of men`,
+				note: (ag.note.match(/Removals list ages[^.]*\./) ??
+					ag.note.match(/Age is from[^.]*\./) ?? [''])[0]
+			});
+		}
+		const gr = demo.genderReasons;
+		const shifted = gr?.under35?.find((/** @type {any} */ r) => r.category === 'shifted');
+		if (shifted) {
+			out.push({
+				key: 'genderReasons',
+				fig: pc(shifted.f_pct),
+				what: `of women under 35 were marked shifted, against ${pc(shifted.m_pct, 1)} of men`,
+				note: (gr.note.match(/Removals list ages[^.]*\./) ??
+					gr.note.match(/Age is from[^.]*\./) ?? [''])[0]
+			});
+		}
+		const ra = demo.removalsVsAdditions;
+		const young = ra?.bands?.[0];
+		if (young && young.m_add > young.f_add) {
+			out.push({
+				key: 'removalsVsAdditions',
+				n: young.m_add - young.f_add,
+				what: `more men than women aged ${young.band} were added to the final roll`
+			});
+		}
+		const sr = demo.sexRatioShift;
+		if (sr?.overall) {
+			out.push({
+				key: 'sexRatioShift',
+				fig: String(Math.round(sr.overall.after)),
+				what: `women for every 1,000 men on the final roll, ${sr.overall.diff < 0 ? 'down' : 'up'} from ${Math.round(sr.overall.before)}`
+			});
+		}
+		const tg = demo.transgender;
+		if (tg) {
+			out.push({
+				key: 'transgender',
+				fig: pc(tg.stateTgPct),
+				what: `of registered transgender voters were removed, against ${pc(tg.stateMfPct)} of men and women`,
+				dek: `Share of transgender voters removed against the share of men and women removed, by constituency, ${region.name}`,
+				note: tg.note
+			});
+		}
+		const dq = demo.disqualifiedGender;
+		if (dq) {
+			out.push({
+				key: 'disqualifiedGender',
+				fig: pc(dq.femalePct),
+				what: 'of voters struck off as disqualified were women',
+				note: `Women were a majority in ${dq.acsMajFemale} of the ${dq.acsMin10} constituencies with at least 10 disqualifications.`
+			});
+		}
+		const ds = demo.disqualificationSpread;
+		if (ds?.rows?.length) {
+			const most = ds.rows.reduce((/** @type {any} */ a, /** @type {any} */ b) =>
+				b.q > a.q ? b : a
+			);
+			out.push({
+				key: 'disqualificationSpread',
+				n: most.q,
+				what: `voters struck off as disqualified in ${most.name}, the most in any constituency`
+			});
+		}
+		const lm = demo.lossVsMargin;
+		if (lm) {
+			out.push({
+				key: 'lossVsMargin',
+				n: lm.exceedsCount,
+				what: `of ${lm.totalAcs} constituencies lost more voters than the ${lm.electionYear} winning margin`
+			});
+		}
+		return out;
+	});
 	const finalItems = $derived(itemsOf(1));
 	const struckItems = $derived(itemsOf(2));
 	const nameItems = $derived(
@@ -226,6 +322,7 @@
 			list.length && { id: 'constituency', word: 'Your constituency' },
 			{ id: 'ledger-1', word: 'Errors on the roll' },
 			{ id: 'ledger-2', word: 'Struck off' },
+			charts.demographics && { id: 'demographics', word: 'Who was removed' },
 			charts.nameFaults && { id: 'names', word: 'Names' },
 			{ id: 'sources', word: 'Methodology' }
 		].filter((c) => !!c)
@@ -652,6 +749,44 @@
 				</p>
 			{/if} -->
 		</section>
+		{#if s.id === 'ledger-2' && charts.demographics}
+			<section class="demographics block" id="s-demographics" aria-labelledby="h-demographics">
+				<h2 id="h-demographics">Who was removed</h2>
+				<div class="findings">
+					{#each demoItems as d (d.key)}
+						{#snippet chart()}
+							<div class="chart-slot">
+								{#if d.key === 'ageGender'}
+									<AgeGenderGap data={demo.ageGender} note={d.note} />
+								{:else if d.key === 'genderReasons'}
+									<GenderReasons data={demo.genderReasons} note={d.note} />
+								{:else if d.key === 'transgender'}
+									<TransgenderScatter data={demo.transgender} dek={d.dek} note={d.note} />
+								{:else if d.key === 'disqualifiedGender'}
+									<DisqualifiedGender data={demo.disqualifiedGender} note={d.note} />
+								{:else if d.key === 'removalsVsAdditions'}
+									<RemovalsVsAdditions data={demo.removalsVsAdditions} />
+								{:else if d.key === 'sexRatioShift'}
+									<SexRatioShift data={demo.sexRatioShift} />
+								{:else if d.key === 'disqualificationSpread'}
+									<DisqualificationSpread data={demo.disqualificationSpread} />
+								{:else if d.key === 'lossVsMargin'}
+									<LossVsMargin data={demo.lossVsMargin} />
+								{/if}
+							</div>
+						{/snippet}
+						<Finding
+							key={d.key}
+							focus={focusKey === d.key}
+							fig={d.fig ?? ''}
+							n={d.n ?? 0}
+							what={d.what}
+							extra={chart}
+						/>
+					{/each}
+				</div>
+			</section>
+		{/if}
 	{/each}
 
 	{#if docs.length}

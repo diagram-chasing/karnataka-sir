@@ -11,6 +11,12 @@
     import NoticeScatter from '$charts/NoticeScatter.svelte';
     import ReasonsTable from '$charts/ReasonsTable.svelte';
     import ReturnRates from '$charts/ReturnRates.svelte';
+    import AgeGenderGap from '$charts/AgeGenderGap.svelte';
+    import GenderReasons from '$charts/GenderReasons.svelte';
+    import SexRatioShift from '$charts/SexRatioShift.svelte';
+    import RemovalsVsAdditions from '$charts/RemovalsVsAdditions.svelte';
+    import LossVsMargin from '$charts/LossVsMargin.svelte';
+    import TransgenderScatter from '$charts/TransgenderScatter.svelte';
     import ReusedIds from '$charts/ReusedIds.svelte';
     import ReturnWall from '$charts/ReturnWall.svelte';
     import RollFunnel from '$charts/RollFunnel.svelte';
@@ -334,6 +340,34 @@ Granted this plot reminds one of the movie Om Shanti Om, but thankfully this is 
 
 <Tally id="tally-dead-back" n={332} of="16.3 lakh marked dead" what="back on the final roll after proving they are alive" />
 
+<p id="demographics">The removals did not fall evenly across age or gender either. Before the draft roll was published, women under 35 were struck off at higher rates than men in 208 of Karnataka's 224 constituencies, peaking at 16.6% against 10.3% in the 25 to 29 age group. From age 40 onward, the pattern reverses: men were struck off at higher rates in every older band.</p>
+
+<div class="breakout-sm">
+<AgeGenderGap note="Age is from the January 2025 roll." />
+</div>
+
+Breaking those removals down by official reason shows where the two halves of that curve come from. Under 35, the gap is concentrated in the "permanently shifted" category, where 11.9% of women were struck off compared with 7.3% of men. Across all ages, higher male removals in the "dead" category (3.4% against 2.5%) offset that gap.
+
+<div class="breakout-sm">
+<GenderReasons note="Age is from the January 2025 roll." />
+</div>
+
+Claims and objections added <Num v="10.06 lakh" /> live entries to the final roll against <Num v="1.05 crore" /> pre-draft removals, mostly among voters aged 18 to 24. Because older men were struck off at higher rates, Karnataka's overall sex ratio actually rose from 1,003 to 1,013 women per 1,000 men, masking a 71- to 77-point drop among voters aged 25 to 34.
+
+<div class="breakout-sm">
+<SexRatioShift />
+</div>
+
+<div class="breakout-sm">
+<RemovalsVsAdditions />
+</div>
+
+The sharpest disparity in the rolls is among registered transgender voters. Between January 2025 and October 2026, 45% of registered transgender voters were removed statewide, twice the 22% rate for men and women, and transgender removal rates were higher in 155 of the 211 constituencies that had transgender voters on the roll.
+
+<div class="breakout-sm">
+<TransgenderScatter />
+</div>
+
 <p id="notices">The SIR process does not appear to treat voters evenly and what happens to you varies with where you live, and possibly with which BLO you get, which <Term id="ero" text="electoral officer" /> you get and how your data was entered.</p>
 
 Under the same rules and the same kind of form, **57 voters in Mayakonda** got a notice, which is 0.03% of its voters, and only 65 in Kollegal. However, in **C.V. Raman Nagar**, **80,890** did, or 59% of all voters. It is not clear how such a difference can occur.
@@ -350,6 +384,12 @@ Here is every constituency by how many of its voters got a notice and how many o
 
 <div class="breakout-sm">
 <NoticeScatter />
+</div>
+
+<p id="margins">To put the scale of the revision in perspective, in 158 of Karnataka's 224 constituencies, the net drop in registered voters between January 2025 and October 2026 exceeded the winning margin from the 2023 Assembly election. The median net loss was 1.8 times the 2023 margin.</p>
+
+<div class="breakout-sm">
+<LossVsMargin />
 </div>
 
 You can look up your own constituency below.
