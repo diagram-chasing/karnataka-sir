@@ -83,7 +83,7 @@
 		<div class="key" aria-hidden="true">
 			<span><i class="sw women"></i>Women</span>
 			<span><i class="sw men"></i>Men</span>
-			<span class="scale-note">Each panel has its own scale</span>
+			<span class="scale-note">Independent scales</span>
 		</div>
 	{/snippet}
 
