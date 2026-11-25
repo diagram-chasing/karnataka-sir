@@ -62,7 +62,7 @@ export const FINDINGS = [
 		key: 'idInTwoConstituencies',
 		half: 1,
 		film: 'duplicate',
-		label: 'Voter IDs on the roll in two constituencies',
+		label: 'The same voter ID on the roll in two constituencies',
 		tally: 'voter IDs on the roll in two constituencies at once',
 		needs: [['final']]
 	},
